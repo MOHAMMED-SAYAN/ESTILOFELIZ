@@ -1,0 +1,1619 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Little Threads | Children's Dress-Making Company</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#563C5C", secondary: "#013220" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+
+        
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20dreamy%20and%20enchanting%20scene%20with%20soft%20pastel%20colors%2C%20featuring%20elegant%20children%5Cs%20dresses%20displayed%20in%20a%20whimsical%20garden%20setting.%20The%20left%20side%20has%20a%20smooth%20gradient%20fading%20to%20white%20to%20accommodate%20text%2C%20while%20the%20right%20side%20showcases%20beautiful%20handcrafted%20children%5Cs%20dresses%20hanging%20from%20decorative%20branches.%20Soft%20bokeh%20lights%20and%20delicate%20fabric%20textures%20create%20a%20magical%20atmosphere%20perfect%20for%20a%20children%5Cs%20dress-making%20brand.&width=1600&height=800&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .process-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20light%2C%20airy%20workspace%20with%20sewing%20materials%2C%20fabric%20swatches%20in%20pastel%20colors%2C%20measuring%20tapes%2C%20and%20design%20sketches%20scattered%20artistically.%20The%20scene%20has%20soft%20natural%20lighting%20coming%20through%20white%20curtains%2C%20creating%20a%20dreamy%20atmosphere.%20Thread%20spools%20and%20fabric%20samples%20in%20pink%2C%20blue%2C%20and%20yellow%20tones%20are%20arranged%20neatly%2C%20with%20a%20half-finished%20children%5Cs%20dress%20on%20a%20small%20mannequin.&width=1600&height=600&seq=2&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-color: #000000;
+
+        }
+
+        .custom-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20creative%20workspace%20with%20various%20fabric%20textures%20and%20patterns%20in%20soft%20pastel%20colors.%20The%20scene%20shows%20different%20types%20of%20children%5Cs%20dress%20fabrics%20-%20cotton%2C%20silk%2C%20tulle%20-%20arranged%20in%20an%20organized%20yet%20artistic%20manner.%20Spools%20of%20colorful%20thread%2C%20buttons%2C%20and%20ribbons%20are%20scattered%20throughout%2C%20with%20gentle%20natural%20lighting%20highlighting%20the%20textures%20and%20colors%20of%20the%20materials.&width=1600&height=600&seq=3&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-color: #563C5C;
+
+        }
+
+        .review-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20soft%20gradient%20background%20in%20pastel%20pink%20and%20blue%20with%20subtle%20wave%20patterns.%20The%20background%20has%20a%20dreamy%2C%20ethereal%20quality%20with%20gentle%20flowing%20lines%20and%20minimal%20texture%2C%20creating%20a%20perfect%20backdrop%20for%20testimonials.%20The%20colors%20blend%20seamlessly%20from%20light%20pink%20to%20soft%20blue%2C%20with%20delicate%20white%20accents%20that%20resemble%20clouds%20or%20flowing%20fabric.&width=1600&height=600&seq=4&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20subtle%20textile%20pattern%20background%20in%20very%20light%20pastel%20colors.%20The%20background%20shows%20a%20delicate%20fabric%20texture%20with%20tiny%20repeating%20elements%20like%20small%20flowers%2C%20dots%2C%20or%20geometric%20shapes.%20The%20pattern%20is%20barely%20visible%2C%20creating%20a%20sophisticated%20and%20elegant%20backdrop%20that%20doesn%5Ct%20distract%20from%20text%20content.%20The%20overall%20tone%20is%20extremely%20light%20with%20just%20enough%20detail%20to%20add%20visual%20interest.&width=1600&height=600&seq=5&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom cursor */
+        .cursor-custom {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff6b98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.586 7.586'/%3E%3Ccircle cx='11' cy='11' r='2'/%3E%3C/svg%3E"), auto;
+        }
+
+        /* Custom animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Custom switch */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #ff6b98;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #ff6b98;
+        }
+
+        /* Custom select */
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ff6b98'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em 1.5em;
+        }
+
+        /* Custom radio and checkbox */
+        .custom-radio:checked+span,
+        .custom-checkbox:checked+span {
+            color: #ff6b98;
+        }
+
+        .custom-radio:checked+span:before,
+        .custom-checkbox:checked+span:before {
+            border-color: #563C5C;
+            background-color: #563C5C;
+        }
+
+        /* Hide default number input arrows */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b98;
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e05a85;
+        }
+
+        /* Masonry grid */
+        .masonry {
+            column-count: 4;
+            column-gap: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .masonry {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white overflow-x-hidden" style="background-color: #e7e48ab1;">
+    <!-- Header Section -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300" style="background-color: #000000;">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="font-['Pacifico'] text-3xl text-primary"></a>
+
+                <h1 style="color: #8a96e7; font-weight:900; margin-left: -290px;">𝓔𝓢𝓣𝓘𝓛𝓞 𝓕𝓔𝓛𝓘𝓩</h1>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Home</a>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-800 hover:text-primary font-medium transition-colors duration-300">
+                            Collections
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Spring
+                                2025</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Summer
+                                Essentials</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Special
+                                Occasions</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Everyday
+                                Wear</a>
+                        </div>
+                    </div>
+                    <a href="#process"
+                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Our
+                        Process</a>
+                    <a href="#contact"
+                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Contact</a>
+                </nav>
+                <!-- Search, Cart and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search -->
+                    <div class="relative hidden md:block">
+                        <input type="text" placeholder="Search..."
+                            class="w-0 focus:w-48 border-none bg-gray-100 rounded-full py-2 pl-10 pr-4 text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div class="absolute left-0 top-0 w-10 h-full flex items-center justify-center text-gray-500">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    <!-- Cart -->
+                    <div class="relative cursor-pointer">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-300">
+                            <i class="ri-shopping-bag-line text-xl"></i>
+                        </div>
+                        <div
+                            class="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold">
+                            3
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-300">
+                        <i class="ri-menu-line text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex items-center mb-4 mt-2">
+                    <input type="text" placeholder="Search..."
+                        class="w-full border-none bg-gray-100 rounded-full py-2 pl-10 pr-4 text-sm">
+                    <div class="absolute left-4 w-10 h-full flex items-center justify-center text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                <a href="#" class="block py-2 text-gray-800 hover:text-primary font-medium">Home</a>
+                <div class="relative">
+                    <button id="mobile-collections-button"
+                        class="flex items-center justify-between w-full py-2 text-gray-800 hover:text-primary font-medium">
+                        Collections
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </button>
+                    <div id="mobile-collections-dropdown" class="hidden bg-gray-50 rounded-md mt-1 mb-2">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Spring 2025</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Summer
+                            Essentials</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Special
+                            Occasions</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Everyday Wear</a>
+                    </div>
+                </div>
+                <a href="#process" class="block py-2 text-gray-800 hover:text-primary font-medium">Our Process</a>
+                <a href="#custom" class="block py-2 text-gray-800 hover:text-primary font-medium">Custom Design</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-primary font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+
+    <section class="hero-bg w-full min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-20">
+            <div class="w-full md:w-1/2 fade-in-up" style="animation-delay: 0.2s;">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+                    Handcrafted Dresses for Little Dreamers
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+                    Discover our collection of beautifully designed children's dresses
+                    made with love, care, and the finest fabrics for your little ones.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#collections"
+                        class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl whitespace-nowrap">
+                        Shop Now
+                        <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                    <a href="#custom"
+                        class="inline-flex items-center px-6 py-3 bg-white text-primary font-medium rounded-button border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg whitespace-nowrap">
+                        Custom Design
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Collections -->
+    <section id="collections" class="py-20 bg-white" style="background-color: #f5deb3a4;">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Featured Collections
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explore our latest seasonal collections designed with love and
+                    attention to every detail.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Collection 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="inline-block bg-primary text-white text-sm font-medium px-3 py-1 rounded-full float">New
+                            Arrival</span>
+                    </div>
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="./spring blossom.jpg"
+                            alt="Spring Collection"
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Spring Blossoms                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Delicate floral patterns and soft pastel colors are perfect for spring celebrations. They bring a fresh, elegant charm that reflects the season’s beauty and joy.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            View Collection
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Collection 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="inline-block bg-secondary text-white text-sm font-medium px-3 py-1 rounded-full float"
+                            style="animation-delay: 0.3s;">Bestseller</span>
+                    </div>
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20party%20dress%20in%20light%20blue%20with%20silver%20embellishments%20and%20a%20layered%20tulle%20skirt.%20The%20dress%20has%20delicate%20beading%20on%20the%20bodice%20and%20a%20satin%20ribbon%20at%20the%20waist.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20details%20of%20the%20dress.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showcasing%20the%20elegant%20design%20perfect%20for%20special%20occasions.&amp;width=600&amp;height=800&amp;seq=7&amp;orientation=portrait"
+                            alt="Party Collection"
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Party Princess                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Elegant designs with sparkle and shine are perfect for special celebrations and events. They add a touch of glamour and sophistication, making every moment feel extraordinary.
+
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            View Collection
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Collection 3 -->
+                <div
+                    class="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20summer%20dress%20in%20light%20yellow%20with%20white%20polka%20dots%20and%20a%20simple%20A-line%20cut.%20The%20dress%20has%20short%20puff%20sleeves%20and%20a%20small%20bow%20at%20the%20waist.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20casual%20yet%20charming%20design.%20The%20lighting%20is%20bright%20and%20cheerful%2C%20showcasing%20the%20lightweight%20fabric%20perfect%20for%20warm%20summer%20days.&amp;width=600&amp;height=800&amp;seq=8&amp;orientation=portrait"
+                            alt="Summer Collection"
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Summer Breeze                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Light, airy designs in breathable fabrics are ideal for warm summer days. They keep you cool and comfortable while maintaining effortless style and elegance.
+
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            View Collection
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Collection 4 -->
+                <div
+                    class="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="inline-block bg-gray-800 text-white text-sm font-medium px-3 py-1 rounded-full float"
+                            style="animation-delay: 0.6s;">Limited Edition</span>
+                    </div>
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20holiday%20dress%20in%20deep%20red%20velvet%20with%20white%20lace%20collar%20and%20cuffs.%20The%20dress%20has%20a%20full%20skirt%20with%20subtle%20pleats%20and%20a%20satin%20ribbon%20at%20the%20waist.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20rich%20color%20and%20luxurious%20fabric.%20The%20lighting%20is%20warm%20and%20cozy%2C%20showcasing%20the%20perfect%20dress%20for%20winter%20celebrations%20and%20holiday%20events.&amp;width=600&amp;height=800&amp;seq=9&amp;orientation=portrait"
+                            alt="Holiday Collection"
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Holiday Magic
+                        </h3>
+                        <p class="text-gray-600 mb-3">
+                            Festive designs in rich colors and luxurious fabrics are perfect for special holiday occasions. They create a warm, celebratory atmosphere and add a sense of elegance to every gathering.
+
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            View Collection
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 bg-white text-primary font-medium rounded-button border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap">
+                    View All Collections
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Design Process Showcase -->
+    <section id="process" class="process-bg py-20 relative">
+        <div class="absolute inset-0 bg-white bg-opacity-90" style="background-color: #eee29ab5;"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our Design Process
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Every dress we create follows a careful process to ensure quality,
+                    comfort, and beauty.
+                </p>
+            </div>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div
+                    class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary bg-opacity-30 transform -translate-x-1/2">
+                </div>
+                <!-- Step 1 -->
+                <div class="md:flex items-center mb-16">
+                    <div class="md:w-1/2 pr-8 md:text-right mb-8 md:mb-0">
+                        <div class="fade-in-up" style="animation-delay: 0.2s;">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+                                Design Inspiration
+                            </h3>
+                            <p class="text-gray-600">
+                                Our designers draw inspiration from nature, art, and
+                                children's imagination to create unique and beautiful designs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center relative z-10">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg float">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-lightbulb-line text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 pl-8 md:pl-16">
+                        <div
+                            class="md:hidden w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg mb-4 float">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-lightbulb-line text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="rounded-lg overflow-hidden shadow-md fade-in-up" style="animation-delay: 0.3s;">
+                            <img src="https://readdy.ai/api/search-image?query=A%20fashion%20designers%20desk%20with%20sketches%20of%20childrens%20dresses%2C%20color%20swatches%2C%20and%20inspiration%20materials.%20The%20desk%20has%20pencils%2C%20fabric%20samples%2C%20and%20a%20mood%20board%20with%20images%20of%20flowers%2C%20butterflies%2C%20and%20children%20playing.%20The%20scene%20is%20bright%20and%20creative%2C%20showing%20the%20beginning%20stages%20of%20dress%20design%20with%20colorful%20drawings%20and%20material%20samples.&amp;width=600&amp;height=400&amp;seq=10&amp;orientation=landscape"
+                                alt="Design Inspiration" class="w-full h-64 object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="md:flex items-center mb-16">
+                    <div class="md:w-1/2 pr-8 md:text-right order-1 md:order-2 mb-8 md:mb-0">
+                        <div class="rounded-lg overflow-hidden shadow-md fade-in-up" style="animation-delay: 0.4s;">
+                            <img src="https://readdy.ai/api/search-image?query=A%20skilled%20seamstress%20carefully%20selecting%20premium%20fabrics%20for%20childrens%20dresses.%20The%20scene%20shows%20various%20high-quality%20fabrics%20in%20pastel%20colors%20-%20silks%2C%20cottons%2C%20and%20specialty%20materials%20with%20different%20textures%20and%20patterns.%20The%20seamstress%20is%20examining%20the%20fabrics%20for%20quality%2C%20with%20measuring%20tools%20and%20fabric%20scissors%20nearby.%20The%20workspace%20is%20organized%20and%20professional.&amp;width=600&amp;height=400&amp;seq=11&amp;orientation=landscape"
+                                alt="Fabric Selection" class="w-full h-64 object-cover object-top">
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center relative z-10 order-2 md:order-1">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg float"
+                            style="animation-delay: 0.3s;">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-scissors-line text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 pl-8 md:pr-16 order-3">
+                        <div
+                            class="md:hidden w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg mb-4 float">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-scissors-line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="fade-in-up" style="animation-delay: 0.5s;">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+                                Fabric Selection
+                            </h3>
+                            <p class="text-gray-600">
+                                We carefully select premium fabrics that are soft, durable,
+                                and safe for children's sensitive skin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="md:flex items-center mb-16">
+                    <div class="md:w-1/2 pr-8 md:text-right mb-8 md:mb-0">
+                        <div class="fade-in-up" style="animation-delay: 0.6s;">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+                                Pattern Making
+                            </h3>
+                            <p class="text-gray-600">
+                                Our expert pattern makers create precise patterns that ensure
+                                perfect fit and comfort for active children.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center relative z-10">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg float"
+                            style="animation-delay: 0.6s;">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-ruler-line text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 pl-8 md:pl-16">
+                        <div
+                            class="md:hidden w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg mb-4 float">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-ruler-line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="rounded-lg overflow-hidden shadow-md fade-in-up" style="animation-delay: 0.7s;">
+                            <img src="https://readdy.ai/api/search-image?query=A%20professional%20pattern%20maker%20working%20on%20childrens%20dress%20patterns.%20The%20scene%20shows%20detailed%20paper%20patterns%20laid%20out%20on%20a%20large%20cutting%20table%2C%20with%20measuring%20tools%2C%20French%20curves%2C%20and%20pattern%20weights.%20The%20pattern%20maker%20is%20carefully%20marking%20and%20adjusting%20pattern%20pieces%2C%20with%20technical%20drawings%20and%20size%20charts%20visible%20nearby.%20The%20workspace%20is%20precise%20and%20methodical.&amp;width=600&amp;height=400&amp;seq=12&amp;orientation=landscape"
+                                alt="Pattern Making" class="w-full h-64 object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="md:flex items-center">
+                    <div class="md:w-1/2 pr-8 md:text-right order-1 md:order-2 mb-8 md:mb-0">
+                        <div class="rounded-lg overflow-hidden shadow-md fade-in-up" style="animation-delay: 0.8s;">
+                            <img src="https://readdy.ai/api/search-image?query=A%20skilled%20seamstress%20carefully%20sewing%20a%20beautiful%20childrens%20dress.%20The%20scene%20shows%20the%20final%20stages%20of%20dress%20creation%2C%20with%20the%20seamstress%20adding%20delicate%20details%20like%20lace%20trim%2C%20buttons%2C%20or%20embroidery.%20The%20nearly%20finished%20dress%20is%20on%20a%20small%20dress%20form%2C%20with%20spools%20of%20thread%2C%20pins%2C%20and%20sewing%20tools%20organized%20nearby.%20The%20workspace%20shows%20attention%20to%20detail%20and%20craftsmanship.&amp;width=600&amp;height=400&amp;seq=13&amp;orientation=landscape"
+                                alt="Skilled Craftsmanship" class="w-full h-64 object-cover object-top">
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center relative z-10 order-2 md:order-1">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg float"
+                            style="animation-delay: 0.9s;">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-thread-line text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 pl-8 md:pr-16 order-3">
+                        <div
+                            class="md:hidden w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg mb-4 float">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-thread-line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="fade-in-up" style="animation-delay: 0.9s;">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+                                Skilled Craftsmanship
+                            </h3>
+                            <p class="text-gray-600">
+                                Each dress is carefully sewn by our experienced seamstresses
+                                who pay attention to every detail and finish.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Gallery -->
+    <section class="py-20 bg-white" style="background-color: #e7e48ab1;">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our Latest Creations
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Browse through our newest designs and find the perfect dress for
+                    your little one.
+                </p>
+            </div>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button
+                    class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-md whitespace-nowrap !rounded-button">
+                    All Designs
+                </button>
+                <button
+                    class="px-4 py-2 bg-white text-gray-700 border border-gray-200 rounded-full text-sm font-medium transition-all duration-300 hover:border-primary hover:text-primary whitespace-nowrap !rounded-button">
+                    Party Dresses
+                </button>
+                <button
+                    class="px-4 py-2 bg-white text-gray-700 border border-gray-200 rounded-full text-sm font-medium transition-all duration-300 hover:border-primary hover:text-primary whitespace-nowrap !rounded-button">
+                    Casual Wear
+                </button>
+                <button
+                    class="px-4 py-2 bg-white text-gray-700 border border-gray-200 rounded-full text-sm font-medium transition-all duration-300 hover:border-primary hover:text-primary whitespace-nowrap !rounded-button">
+                    Special Occasions
+                </button>
+                <button
+                    class="px-4 py-2 bg-white text-gray-700 border border-gray-200 rounded-full text-sm font-medium transition-all duration-300 hover:border-primary hover:text-primary whitespace-nowrap !rounded-button">
+                    New Arrivals
+                </button>
+            </div>
+            <!-- Masonry Gallery -->
+            <div class="masonry">
+                <!-- Item 1 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20party%20dress%20in%20lavender%20with%20delicate%20lace%20overlay%20and%20satin%20ribbon%20details.%20The%20dress%20has%20a%20full%20skirt%20with%20tulle%20layers%20and%20small%20flower%20embellishments%20at%20the%20waist.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20elegant%20design%20and%20craftsmanship%20of%20the%20dress.%20The%20lighting%20is%20soft%20and%20flattering.&amp;width=500&amp;height=700&amp;seq=14&amp;orientation=portrait"
+                            alt="Lavender Dream Dress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Lavender Dream
+                            </h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20casual%20dress%20in%20light%20blue%20with%20white%20polka%20dots%20and%20a%20red%20ribbon%20belt.%20The%20dress%20has%20a%20simple%20A-line%20cut%20with%20short%20puff%20sleeves%20and%20a%20Peter%20Pan%20collar.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20charming%20everyday%20design.%20The%20lighting%20is%20bright%20and%20cheerful%2C%20showcasing%20the%20comfortable%20cotton%20fabric.&amp;width=500&amp;height=600&amp;seq=15&amp;orientation=portrait"
+                            alt="Polka Dot Dress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Polka Dot Charm
+                            </h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20special%20occasion%20dress%20in%20ivory%20with%20gold%20embroidery%20and%20pearl%20details.%20The%20dress%20has%20a%20full%20ball%20gown%20skirt%20with%20multiple%20layers%20of%20tulle%20and%20a%20beautifully%20embellished%20bodice.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20luxurious%20design%20perfect%20for%20flower%20girls%20or%20special%20celebrations.%20The%20lighting%20is%20soft%20and%20elegant.&amp;width=500&amp;height=800&amp;seq=16&amp;orientation=portrait"
+                            alt="Ivory Princess Dress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Ivory Princess
+                            </h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20summer%20dress%20in%20bright%20yellow%20with%20white%20daisy%20embroidery%20along%20the%20hem.%20The%20dress%20has%20a%20simple%20sundress%20style%20with%20thin%20straps%20and%20a%20gathered%20waist.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20cheerful%20design%20perfect%20for%20warm%20weather.%20The%20lighting%20is%20bright%20and%20sunny%2C%20showcasing%20the%20lightweight%20cotton%20fabric.&amp;width=500&amp;height=650&amp;seq=17&amp;orientation=portrait"
+                            alt="Daisy Sundress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Daisy Sundress
+                            </h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20holiday%20dress%20in%20deep%20green%20velvet%20with%20white%20lace%20collar%20and%20gold%20ribbon%20details.%20The%20dress%20has%20a%20classic%20A-line%20silhouette%20with%20long%20sleeves%20and%20a%20full%20skirt.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20festive%20design%20perfect%20for%20Christmas%20or%20winter%20celebrations.%20The%20lighting%20is%20warm%20and%20cozy.&amp;width=500&amp;height=700&amp;seq=18&amp;orientation=portrait"
+                            alt="Holiday Elegance Dress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Holiday Elegance
+                            </h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="masonry-item fade-in-up" style="animation-delay: 0.7s;">
+                    <div class="group relative overflow-hidden rounded-lg shadow-md">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20childrens%20casual%20dress%20in%20soft%20mint%20green%20with%20tiny%20white%20heart%20pattern%20and%20a%20simple%20bow%20at%20the%20waist.%20The%20dress%20has%20a%20comfortable%20fit-and-flare%20silhouette%20with%20cap%20sleeves.%20The%20background%20is%20simple%20and%20clean%2C%20highlighting%20the%20sweet%20everyday%20design.%20The%20lighting%20is%20bright%20and%20fresh%2C%20showcasing%20the%20comfortable%20cotton%20blend%20fabric.&amp;width=500&amp;height=600&amp;seq=19&amp;orientation=portrait"
+                            alt="Mint Hearts Dress"
+                            class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg mx-2 transition-transform duration-300 hover:scale-110 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-eye-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-semibold text-gray-800">Mint Hearts</h3>
+                            <p class="text-primary font-medium">599/- RS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap">
+                    View All Products
+                    <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                        <i class="ri-arrow-right-line"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Custom Design Section -->
+    <section id="custom" class="custom-bg py-20 relative">
+        <div class="absolute inset-0 bg-white bg-opacity-90" style="background-color: #ded696aa;"></div>
+        <div class="container mx-auto px-4 relative z-10">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+                            Why Choose Custom?
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                        <i class="ri-fingerprint-line text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                                        Perfect Fit
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Custom measurements ensure the dress fits your child
+                                        perfectly for maximum comfort.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                        <i class="ri-palette-line text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                                        Unique Design
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Create a one-of-a-kind dress that reflects your child's
+                                        personality and style.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                        <i class="ri-star-line text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                                        Premium Quality
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Choose from our selection of high-quality fabrics and
+                                        exquisite embellishments.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                        <i class="ri-heart-line text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">
+                                        Made with Love
+                                    </h4>
+                                    <p class="text-gray-600">
+                                        Each custom dress is handcrafted with care by our skilled
+                                        seamstresses.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 mr-3">
+                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20female%20fashion%20designer%20with%20a%20warm%20smile%2C%20in%20her%20mid-30s.%20She%20has%20shoulder-length%20brown%20hair%20and%20is%20wearing%20stylish%20glasses.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background%2C%20showing%20her%20as%20approachable%20and%20creative.%20The%20lighting%20is%20soft%20and%20flattering.&amp;width=100&amp;height=100&amp;seq=20&amp;orientation=squarish"
+                                        alt="Designer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 italic text-sm">
+                                        "Our custom design process allows us to create the perfect
+                                        dress for your child's special moments. We work closely
+                                        with you to bring your vision to life."
+                                    </p>
+                                    <p class="text-gray-800 font-medium text-sm mt-2">
+                                        - Emily Richardson, Lead Designer
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Customer Reviews -->
+    <section class="review-bg py-20 relative">
+        <div class="absolute inset-0 bg-white bg-opacity-90" style="background-color: #f0e09acd;"></div>
+        <div class="container mx-auto px-4 relative z-10" >
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    What Parents Say
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Hear from families who have chosen our dresses for their little
+                    ones' special moments.
+                </p>
+            </div>
+            <div class="relative">
+                <div id="reviews-container" class="flex overflow-x-hidden">
+                    <div class="review-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full" style="background-repeat:round;">
+                            <div class="flex text-primary mb-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                "The dress we ordered for my daughter's birthday was
+                                absolutely stunning! The quality of the fabric and attention
+                                to detail exceeded our expectations. She felt like a princess
+                                all day long."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20woman%20in%20her%2030s%20with%20blonde%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=21&amp;orientation=squarish"
+                                        alt="Customer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium">Rebecca Thompson</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Lily, 5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <div class="flex text-primary mb-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                "We ordered a custom dress for my daughter's role as a flower
+                                girl, and it was perfect! The team was so helpful throughout
+                                the design process, and the final result was even better than
+                                we imagined."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20woman%20in%20her%2040s%20with%20dark%20brown%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=22&amp;orientation=squarish"
+                                        alt="Customer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium">Jennifer Martinez</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Sophia, 6</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <div class="flex text-primary mb-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-half-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                "The everyday dresses we purchased are not only beautiful but
+                                also incredibly durable. After countless washes, they still
+                                look brand new. My daughter loves how comfortable they are for
+                                school and play."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20Asian%20woman%20in%20her%2030s%20with%20black%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=23&amp;orientation=squarish"
+                                        alt="Customer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium">Michelle Kim</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Emma, 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Navigation Buttons -->
+                <button id="prev-review"
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 focus:outline-none z-10 !rounded-button">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </button>
+                <button id="next-review"
+                    class="absolute top-1/2 right-0 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 focus:outline-none z-10 !rounded-button">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </button>
+            </div>
+            <!-- Dots Indicator -->
+            <div class="flex justify-center mt-8">
+                <div class="review-dot w-3 h-3 rounded-full bg-primary mx-1 cursor-pointer"></div>
+                <div class="review-dot w-3 h-3 rounded-full bg-gray-300 mx-1 cursor-pointer"></div>
+                <div class="review-dot w-3 h-3 rounded-full bg-gray-300 mx-1 cursor-pointer"></div>
+                <div class="review-dot w-3 h-3 rounded-full bg-gray-300 mx-1 cursor-pointer"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white" style="background-color: #f5d3b3;">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Get in Touch
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Have questions or need assistance? We're here to help create the
+                    perfect dress for your little one.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8" style="background-color: #36454f;">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6" style="color: #f5d3b3;">
+                            Send Us a Message
+                        </h3>
+                        <form>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                    <input type="text" id="name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Enter subject">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                                    placeholder="Type your message here..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full py-3 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center whitespace-nowrap">
+                                Send Message
+                                <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                                    <i class="ri-send-plane-line"></i>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8" style="background-color: #36454f;">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6" style="color: #f5d3b3;">
+                            Contact Information
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                        <i class="ri-map-pin-line"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium" style="color: #f5d3b3;">Our Studio</h4>
+                                    <p class="text-gray-600" style="color: #e5dadab9;">
+                                        vengara, tharayittal <br>india, kerala
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                        <i class="ri-phone-line"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium" style="color: #f5d3b3;">Phone</h4>
+                                    <p class="text-gray-600" style="color: #e5dadab9;">+91 6282521682</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                        <i class="ri-mail-line"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium" style="color: #f5d3b3;">Email</h4>
+                                    <p class="text-gray-600" style="color: #e5dadab9;">npoochengel@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 mr-4">
+                                    <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                        <i class="ri-time-line"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium" style="color: #f5d3b3;">Business Hours</h4>
+                                    <p class="text-gray-600" style="color: #e5dadab9;">
+                                        Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM
+                                        - 4:00 PM<br>Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="text-gray-800 font-medium mb-3">Follow Us</h4>
+                            <div class="flex space-x-3">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-instagram-line"></i>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-facebook-fill"></i>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-pinterest-line"></i>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-twitter-x-line"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden h-64 fade-in-up"
+                        style="animation-delay: 0.6s;">
+                        <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-bg pt-16 pb-8 relative">
+        <div class="absolute inset-0 bg-white bg-opacity-95" style="background-color: rgb(0, 0, 0);"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="font-['Pacifico'] text-3xl text-primary mb-6 inline-block">logo</a>
+                    <p class="text-gray-600 mb-6" style="color: aliceblue;">
+                        Handcrafted children's dresses made with love, care, and the
+                        finest fabrics for your little ones.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-instagram-line"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-pinterest-line"></i>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-twitter-x-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4" style="color: aliceblue;">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Home</a>
+                        </li>
+                        <li>
+                            <a href="#collections"
+                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Collections</a>
+                        </li>
+                        <li>
+                            <a href="#process"
+                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Our Process</a>
+                        </li>
+                        <li>
+                            <a href="#custom"
+                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Custom
+                                Design</a>
+                        </li>
+                        <li>
+                            <a href="#contact"
+                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Size
+                                Guide</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4" style="color: aliceblue;">
+                        Customer Service
+                    </h3>
+                    <ul class="space-y-2">
+                        <li  style="color: aliceblue;">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300 style="color: aliceblue;"">Shipping
+                                &amp; Returns</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Care
+                                Instructions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Privacy
+                                Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Terms
+                                &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4" style="color: aliceblue;">Subscribe</h3>
+                    <p class="text-gray-600 mb-4" style="color: aliceblue;">
+                        Subscribe to our newsletter for exclusive offers and updates on
+                        new collections.
+                    </p>
+                    <form class="flex mb-4">
+                        <input type="email" placeholder="Your email address"
+                            class="flex-grow px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap !rounded-button">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="w-8 h-5 flex items-center justify-center">
+                            <i class="ri-visa-fill text-blue-800 text-lg"></i>
+                        </div>
+                        <div class="w-8 h-5 flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-orange-600 text-lg"></i>
+                        </div>
+                        <div class="w-8 h-5 flex items-center justify-center">
+                            <i class="ri-paypal-fill text-blue-600 text-lg"></i>
+                        </div>
+                        <div class="w-8 h-5 flex items-center justify-center">
+                            <i class="ri-amazon-pay-fill text-yellow-600 text-lg"></i>
+                        </div>
+                        <div class="w-8 h-5 flex items-center justify-center">
+                            <i class="ri-apple-fill text-gray-800 text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center">
+                <p class="text-gray-600 text-sm">
+                    © 2025 Little Threads. All rights reserved. Handcrafted with
+                    love for little dreamers.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Live Chat Widget -->
+    <div id="chat-widget"
+        class="fixed bottom-6 right-6 z-50 opacity-0 transform translate-y-10 transition-all duration-500">
+        <div id="chat-popup" class="hidden bg-white rounded-lg shadow-xl w-80 mb-4 overflow-hidden">
+            <div class="bg-primary p-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-white font-medium">Chat with Us</h3>
+                    <button id="close-chat" class="text-white hover:text-gray-200">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-close-line"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4 h-80 overflow-y-auto bg-gray-50">
+                <div class="flex items-start mb-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0 mr-2">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-customer-service-2-line"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg shadow-sm max-w-[80%]">
+                        <p class="text-sm text-gray-700">
+                            Hello! How can I help you today?
+                        </p>
+                        <span class="text-xs text-gray-500 mt-1 block">10:30 AM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex">
+                    <input type="text" placeholder="Type your message..."
+                        class="flex-grow px-3 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                    <button
+                        class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap !rounded-button">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-send-plane-line"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button id="chat-button"
+            class="w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center text-white hover:bg-opacity-90 transition-all duration-300 hover:scale-105 !rounded-button">
+            <div class="w-7 h-7 flex items-center justify-center">
+                <i class="ri-chat-1-line text-xl"></i>
+            </div>
+        </button>
+    </div>
+
+    <script src="scripts.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileMenuButton.addEventListener("click", function () {
+                if (mobileMenu.classList.contains("hidden")) {
+                    mobileMenu.classList.remove("hidden");
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line text-xl"></i>';
+                } else {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line text-xl"></i>';
+                }
+            });
+            // Mobile collections dropdown
+            const mobileCollectionsButton = document.getElementById(
+                "mobile-collections-button",
+            );
+            const mobileCollectionsDropdown = document.getElementById(
+                "mobile-collections-dropdown",
+            );
+            mobileCollectionsButton.addEventListener("click", function () {
+                if (mobileCollectionsDropdown.classList.contains("hidden")) {
+                    mobileCollectionsDropdown.classList.remove("hidden");
+                    mobileCollectionsButton
+                        .querySelector("i")
+                        .classList.remove("ri-arrow-down-s-line");
+                    mobileCollectionsButton
+                        .querySelector("i")
+                        .classList.add("ri-arrow-up-s-line");
+                } else {
+                    mobileCollectionsDropdown.classList.add("hidden");
+                    mobileCollectionsButton
+                        .querySelector("i")
+                        .classList.remove("ri-arrow-up-s-line");
+                    mobileCollectionsButton
+                        .querySelector("i")
+                        .classList.add("ri-arrow-down-s-line");
+                }
+            });
+            // Header scroll effect
+            const header = document.querySelector("header");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("py-2");
+                    header.classList.add("shadow");
+                } else {
+                    header.classList.remove("py-2");
+                    header.classList.remove("shadow");
+                }
+            });
+            // Reviews carousel
+            const reviewsContainer = document.getElementById("reviews-container");
+            const prevReviewBtn = document.getElementById("prev-review");
+            const nextReviewBtn = document.getElementById("next-review");
+            const reviewDots = document.querySelectorAll(".review-dot");
+            let currentReviewIndex = 0;
+            function showReview(index) {
+                const slideWidth = document.querySelector(".review-slide").offsetWidth;
+                reviewsContainer.style.transition = "transform 0.5s ease-in-out";
+                reviewsContainer.style.transform = `translateX(-${slideWidth * index}px)`;
+                // Update dots
+                reviewDots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove("bg-gray-300");
+                        dot.classList.add("bg-primary");
+                    } else {
+                        dot.classList.remove("bg-primary");
+                        dot.classList.add("bg-gray-300");
+                    }
+                });
+                currentReviewIndex = index;
+            }
+            prevReviewBtn.addEventListener("click", function () {
+                if (currentReviewIndex > 0) {
+                    showReview(currentReviewIndex - 1);
+                }
+            });
+            nextReviewBtn.addEventListener("click", function () {
+                const maxIndex = document.querySelectorAll(".review-slide").length - 1;
+                if (currentReviewIndex < maxIndex) {
+                    showReview(currentReviewIndex + 1);
+                }
+            });
+            reviewDots.forEach((dot, index) => {
+                dot.addEventListener("click", function () {
+                    showReview(index);
+                });
+            });
+            // Auto rotate reviews
+            let reviewInterval = setInterval(() => {
+                const maxIndex = document.querySelectorAll(".review-slide").length - 1;
+                if (currentReviewIndex < maxIndex) {
+                    showReview(currentReviewIndex + 1);
+                } else {
+                    showReview(0);
+                }
+            }, 5000);
+            reviewsContainer.addEventListener("mouseenter", () => {
+                clearInterval(reviewInterval);
+            });
+            reviewsContainer.addEventListener("mouseleave", () => {
+                reviewInterval = setInterval(() => {
+                    const maxIndex = document.querySelectorAll(".review-slide").length - 1;
+                    if (currentReviewIndex < maxIndex) {
+                        showReview(currentReviewIndex + 1);
+                    } else {
+                        showReview(0);
+                    }
+                }, 5000);
+            });
+            // Chat widget
+            const chatWidget = document.getElementById("chat-widget");
+            const chatButton = document.getElementById("chat-button");
+            const chatPopup = document.getElementById("chat-popup");
+            const closeChat = document.getElementById("close-chat");
+            // Show chat widget with animation after 2 seconds
+            setTimeout(() => {
+                chatWidget.style.opacity = "1";
+                chatWidget.style.transform = "translateY(0)";
+            }, 2000);
+            chatButton.addEventListener("click", function () {
+                if (chatPopup.classList.contains("hidden")) {
+                    chatPopup.classList.remove("hidden");
+                    chatButton.innerHTML = '<i class="ri-close-line text-xl"></i>';
+                } else {
+                    chatPopup.classList.add("hidden");
+                    chatButton.innerHTML = '<i class="ri-chat-1-line text-xl"></i>';
+                }
+            });
+            closeChat.addEventListener("click", function () {
+                chatPopup.classList.add("hidden");
+                chatButton.innerHTML = '<i class="ri-chat-1-line text-xl"></i>';
+            });
+            // Custom radio buttons
+            const customRadios = document.querySelectorAll(".custom-radio");
+            customRadios.forEach((radio) => {
+                radio.addEventListener("change", function () {
+                    const name = this.getAttribute("name");
+                    const radios = document.querySelectorAll(`.custom-radio[name="${name}"]`);
+                    radios.forEach((r) => {
+                        const label = r.nextElementSibling;
+                        if (r.checked) {
+                            label.classList.add("border-primary");
+                            label.classList.add("text-primary");
+                        } else {
+                            label.classList.remove("border-primary");
+                            label.classList.remove("text-primary");
+                        }
+                    });
+                });
+            });
+            // Fade in animations on scroll
+            const fadeElements = document.querySelectorAll(".fade-in-up");
+            function checkFade() {
+                fadeElements.forEach((element) => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            }
+            // Initial check
+            checkFade();
+            // Check on scroll
+            window.addEventListener("scroll", checkFade);
+        });
+    </script>
+
+
+</body>
+
+</html>

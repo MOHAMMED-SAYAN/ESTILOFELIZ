@@ -1,0 +1,401 @@
+
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  .hero-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20dreamy%20and%20enchanting%20scene%20with%20soft%20pastel%20colors%2C%20featuring%20elegant%20children%5Cs%20dresses%20displayed%20in%20a%20whimsical%20garden%20setting.%20The%20left%20side%20has%20a%20smooth%20gradient%20fading%20to%20white%20to%20accommodate%20text%2C%20while%20the%20right%20side%20showcases%20beautiful%20handcrafted%20children%5Cs%20dresses%20hanging%20from%20decorative%20branches.%20Soft%20bokeh%20lights%20and%20delicate%20fabric%20textures%20create%20a%20magical%20atmosphere%20perfect%20for%20a%20children%5Cs%20dress-making%20brand.&width=1600&height=800&seq=1&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+  .process-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20light%2C%20airy%20workspace%20with%20sewing%20materials%2C%20fabric%20swatches%20in%20pastel%20colors%2C%20measuring%20tapes%2C%20and%20design%20sketches%20scattered%20artistically.%20The%20scene%20has%20soft%20natural%20lighting%20coming%20through%20white%20curtains%2C%20creating%20a%20dreamy%20atmosphere.%20Thread%20spools%20and%20fabric%20samples%20in%20pink%2C%20blue%2C%20and%20yellow%20tones%20are%20arranged%20neatly%2C%20with%20a%20half-finished%20children%5Cs%20dress%20on%20a%20small%20mannequin.&width=1600&height=600&seq=2&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    background-color: #000000;
+    
+  }
+
+  .custom-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20creative%20workspace%20with%20various%20fabric%20textures%20and%20patterns%20in%20soft%20pastel%20colors.%20The%20scene%20shows%20different%20types%20of%20children%5Cs%20dress%20fabrics%20-%20cotton%2C%20silk%2C%20tulle%20-%20arranged%20in%20an%20organized%20yet%20artistic%20manner.%20Spools%20of%20colorful%20thread%2C%20buttons%2C%20and%20ribbons%20are%20scattered%20throughout%2C%20with%20gentle%20natural%20lighting%20highlighting%20the%20textures%20and%20colors%20of%20the%20materials.&width=1600&height=600&seq=3&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    background-color: #563C5C;
+    
+  }
+
+  .review-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20soft%20gradient%20background%20in%20pastel%20pink%20and%20blue%20with%20subtle%20wave%20patterns.%20The%20background%20has%20a%20dreamy%2C%20ethereal%20quality%20with%20gentle%20flowing%20lines%20and%20minimal%20texture%2C%20creating%20a%20perfect%20backdrop%20for%20testimonials.%20The%20colors%20blend%20seamlessly%20from%20light%20pink%20to%20soft%20blue%2C%20with%20delicate%20white%20accents%20that%20resemble%20clouds%20or%20flowing%20fabric.&width=1600&height=600&seq=4&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .footer-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20subtle%20textile%20pattern%20background%20in%20very%20light%20pastel%20colors.%20The%20background%20shows%20a%20delicate%20fabric%20texture%20with%20tiny%20repeating%20elements%20like%20small%20flowers%2C%20dots%2C%20or%20geometric%20shapes.%20The%20pattern%20is%20barely%20visible%2C%20creating%20a%20sophisticated%20and%20elegant%20backdrop%20that%20doesn%5Ct%20distract%20from%20text%20content.%20The%20overall%20tone%20is%20extremely%20light%20with%20just%20enough%20detail%20to%20add%20visual%20interest.&width=1600&height=600&seq=5&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Custom cursor */
+  .cursor-custom {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff6b98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.586 7.586'/%3E%3Ccircle cx='11' cy='11' r='2'/%3E%3C/svg%3E"), auto;
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Custom switch */
+  .toggle-checkbox:checked {
+    right: 0;
+    border-color: #ff6b98;
+  }
+
+  .toggle-checkbox:checked+.toggle-label {
+    background-color: #ff6b98;
+  }
+
+  /* Custom select */
+  .custom-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ff6b98'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+  }
+
+  /* Custom radio and checkbox */
+  .custom-radio:checked+span,
+  .custom-checkbox:checked+span {
+    color: #ff6b98;
+  }
+
+  .custom-radio:checked+span:before,
+  .custom-checkbox:checked+span:before {
+    border-color: #563C5C;
+    background-color: #563C5C;
+  }
+
+  /* Hide default number input arrows */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff6b98;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e05a85;
+  }
+
+  /* Masonry grid */
+  .masonry {
+    column-count: 4;
+    column-gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .masonry {
+      column-count: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .masonry {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .masonry {
+      column-count: 1;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  
+
+
+  :where([class^="ri-"])::before {
+    content: "\f3c2";
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Background Image Animations */
+.hero-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20dreamy%20and%20enchanting%20scene%20with%20soft%20pastel%20colors%2C%20featuring%20elegant%20children%5Cs%20dresses%20displayed%20in%20a%20whimsical%20garden%20setting.%20The%20left%20side%20has%20a%20smooth%20gradient%20fading%20to%20white%20to%20accommodate%20text%2C%20while%20the%20right%20side%20showcases%20beautiful%20handcrafted%20children%5Cs%20dresses%20hanging%20from%20decorative%20branches.%20Soft%20bokeh%20lights%20and%20delicate%20fabric%20textures%20create%20a%20magical%20atmosphere%20perfect%20for%20a%20children%5Cs%20dress-making%20brand.&width=1600&height=800&seq=1&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    animation: zoomPulse 12s ease-in-out infinite;
+    will-change: transform;
+}
+
+.process-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20light%2C%20airy%20workspace%20with%20sewing%20materials%2C%20fabric%20swatches%20in%20pastel%20colors%2C%20measuring%20tapes%2C%20and%20design%20sketches%20scattered%20artistically.%20The%20scene%20has%20soft%20natural%20lighting%20coming%20through%20white%20curtains%2C%20creating%20a%20dreamy%20atmosphere.%20Thread%20spools%20and%20fabric%20samples%20in%20pink%2C%20blue%2C%20and%20yellow%20tones%20are%20arranged%20neatly%2C%20with%20a%20half-finished%20children%5Cs%20dress%20on%20a%20small%20mannequin.&width=1600&height=600&seq=2&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    background-color: #000000;
+    animation: fadeSlide 10s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+.custom-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20creative%20workspace%20with%20various%20fabric%20textures%20and%20patterns%20in%20soft%20pastel%20colors.%20The%20scene%20shows%20different%20types%20of%20children%5Cs%20dress%20fabrics%20-%20cotton%2C%20silk%2C%20tulle%20-%20arranged%20in%20an%20organized%20yet%20artistic%20manner.%20Spools%20of%20colorful%20thread%2C%20buttons%2C%20and%20ribbons%20are%20scattered%20throughout%2C%20with%20gentle%20natural%20lighting%20highlighting%20the%20textures%20and%20colors%20of%20the%20materials.&width=1600&height=600&seq=3&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    background-color: #563C5C;
+    animation: zoomPulse 14s ease-in-out infinite;
+    will-change: transform;
+}
+
+.review-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20soft%20gradient%20background%20in%20pastel%20pink%20and%20blue%20with%20subtle%20wave%20patterns.%20The%20background%20has%20a%20dreamy%2C%20ethereal%20quality%20with%20gentle%20flowing%20lines%20and%20minimal%20texture%2C%20creating%20a%20perfect%20backdrop%20for%20testimonials.%20The%20colors%20blend%20seamlessly%20from%20light%20pink%20to%20soft%20blue%2C%20with%20delicate%20white%20accents%20that%20resemble%20clouds%20or%20flowing%20fabric.&width=1600&height=600&seq=4&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    animation: waveFlow 15s ease-in-out infinite;
+    will-change: background-position;
+}
+
+.footer-bg {
+    background-image: url('https://readdy.ai/api/search-image?query=A%20subtle%20textile%20pattern%20background%20in%20very%20light%20pastel%20colors.%20The%20background%20shows%20a%20delicate%20fabric%20texture%20with%20tiny%20repeating%20elements%20like%20small%20flowers%2C%20dots%2C%20or%20geometric%20shapes.%20The%20pattern%20is%20barely%20visible%2C%20creating%20a%20sophisticated%20and%20elegant%20backdrop%20that%20doesn%5Ct%20distract%20from%20text%20content.%20The%20overall%20tone%20is%20extremely%20light%20with%20just%20enough%20detail%20to%20add%20visual%20interest.&width=1600&height=600&seq=5&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    animation: subtleFade 8s ease-in-out infinite;
+    will-change: opacity;
+}
+
+/* Foreground Image Animations */
+img:not(.hero-bg, .process-bg, .custom-bg, .review-bg, .footer-bg) {
+    opacity: 1;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+img.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* New Animation Keyframes */
+@keyframes zoomPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeSlide {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+@keyframes waveFlow {
+    0%, 100% {
+        background-position: center;
+    }
+    50% {
+        background-position: center 10px;
+    }
+}
+
+@keyframes subtleFade {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Custom Cursor */
+.cursor-custom {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff6b98' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.586 7.586'/%3E%3Ccircle cx='11' cy='11' r='2'/%3E%3C/svg%3E"), auto;
+}
+
+/* Custom Switch */
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: #ff6b98;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+    background-color: #ff6b98;
+}
+
+/* Custom Select */
+.custom-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ff6b98'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+}
+
+/* Custom Radio and Checkbox */
+.custom-radio:checked+span,
+.custom-checkbox:checked+span {
+    color: #ff6b98;
+}
+
+.custom-radio:checked+span:before,
+.custom-checkbox:checked+span:before {
+    border-color: #563C5C;
+    background-color: #563C5C;
+}
+
+/* Hide Default Number Input Arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b98;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e05a85;
+}
+
+/* Masonry Grid */
+.masonry {
+    column-count: 4;
+    column-gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .masonry {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 640px) {
+    .hero-bg, .process-bg, .custom-bg, .review-bg, .footer-bg {
+        animation-duration: 10s; /* Slower animations on mobile */
+    }
+    img:hover {
+        transform: scale(1.03); /* Smaller hover effect on mobile */
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg, .process-bg, .custom-bg, .review-bg, .footer-bg, img {
+        animation: none;
+        transition: none;
+        transform: none;
+    }
+}
+  
