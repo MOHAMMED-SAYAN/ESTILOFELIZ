@@ -190,3 +190,46 @@ tailwind.config = {
     // Check on scroll
     window.addEventListener("scroll", checkFade);
   });
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM loaded, initializing mobile menu...");
+  
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    if (!mobileMenuButton || !mobileMenu) {
+      console.error("Mobile menu elements not found!", { mobileMenuButton, mobileMenu });
+      return;
+    }
+  
+    mobileMenuButton.addEventListener("click", function () {
+      console.log("Mobile menu button clicked");
+      const isHidden = mobileMenu.classList.contains("hidden");
+      console.log("Is menu hidden?", isHidden);
+      mobileMenu.classList.toggle("hidden", !isHidden);
+      mobileMenuButton.innerHTML = isHidden
+        ? '<i class="ri-close-line text-xl"></i>'
+        : '<i class="ri-menu-line text-xl"></i>';
+    });
+  
+    const mobileCollectionsButton = document.getElementById("mobile-collections-button");
+    const mobileCollectionsDropdown = document.getElementById("mobile-collections-dropdown");
+  
+    if (!mobileCollectionsButton || !mobileCollectionsDropdown) {
+      console.error("Mobile collections elements not found!", { mobileCollectionsButton, mobileCollectionsDropdown });
+      return;
+    }
+  
+    mobileCollectionsButton.addEventListener("click", function () {
+      console.log("Collections button clicked");
+      const isHidden = mobileCollectionsDropdown.classList.contains("hidden");
+      console.log("Is collections dropdown hidden?", isHidden);
+      mobileCollectionsDropdown.classList.toggle("hidden", !isHidden);
+      const icon = mobileCollectionsButton.querySelector("i");
+      icon.classList.toggle("ri-arrow-down-s-line", !isHidden);
+      icon.classList.toggle("ri-arrow-up-s-line", isHidden);
+    });
+  
+    // ... (rest of the JavaScript code)
+  });

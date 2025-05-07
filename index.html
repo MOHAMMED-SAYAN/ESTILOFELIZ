@@ -34,8 +34,6 @@
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
     <style>
-
-        
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
@@ -208,115 +206,300 @@
             break-inside: avoid;
             margin-bottom: 1rem;
         }
+
+        #mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu:not(.hidden) {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobile-menu.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#mobile-collections-dropdown {
+  transition: all 0.3s ease-in-out;
+}
+
+#mobile-collections-dropdown:not(.hidden) {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mobile-collections-dropdown.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+#mobile-menu {
+  z-index: 1000;
+}
+#reviews-container {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.review-slide {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .review-slide {
+    width: 33.333333%; /* For 3 slides visible on desktop */
+  }
+}
+.review-slide {
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+#reviews-container {
+  transition: transform 0.5s ease-in-out;
+}
     </style>
 </head>
 
 <body class="bg-white overflow-x-hidden" style="background-color: #e7e48ab1;">
-    <!-- Header Section -->
-    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50 transition-all duration-300" style="background-color: #000000;">
+    <!-- Header -->
+    <header class="fixed w-full bg-opacity-95 shadow-sm z-50 transition-all duration-500 hover:shadow-lg" style="border: 2px solid rgba(255, 255, 255, 0.555); border-radius: 15px; margin: 6px 6px -15px -5px; width: 99%; margin-left: 6; background-color: #000000c4; backdrop-filter: blur(12px);">
         <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <h1 class="font-['Pacifico'] text-2xl text-primary">𝓔𝓢𝓣𝓘𝓛𝓞 𝓕𝓔𝓛𝓘𝓩</h1>
-
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#"
-                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Home</a>
-                    <div class="relative group">
-                        <button
-                            class="flex items-center text-gray-800 hover:text-primary font-medium transition-colors duration-300">
-                            Collections
-                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Spring
-                                2025</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Summer
-                                Essentials</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Special
-                                Occasions</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200">Everyday
-                                Wear</a>
-                        </div>
-                    </div>
-                    <a href="#process"
-                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Our
-                        Process</a>
-                    <a href="#contact"
-                        class="text-gray-800 hover:text-primary font-medium transition-colors duration-300">Contact</a>
-                </nav>
-                <!-- Search, Cart and Mobile Menu Button -->
-                <div class="flex items-center space-x-4">
-                    <!-- Search -->
-                    <div class="relative hidden md:block">
-                        <input type="text" placeholder="Search..."
-                            class="w-0 focus:w-48 border-none bg-gray-100 rounded-full py-2 pl-10 pr-4 text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                        <div class="absolute left-0 top-0 w-10 h-full flex items-center justify-center text-gray-500">
-                            <i class="ri-search-line"></i>
-                        </div>
-                    </div>
-                    <!-- Cart -->
-                    <div class="relative cursor-pointer">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-300">
-                            <i class="ri-shopping-bag-line text-xl"></i>
-                        </div>
-                        <div
-                            class="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold">
-                            3
-                        </div>
-                    </div>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button"
-                        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors duration-300">
-                        <i class="ri-menu-line text-xl"></i>
-                    </button>
+          <div class="flex items-center justify-between">
+            <!-- Logo with elegant animation -->
+            <h1 class="font-['Pacifico'] text-2xl text-white hover:text-pink-400 transform hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]">
+              <span class="inline-block hover:rotate-3 transition-transform duration-1000 hover:duration-300">𝓔𝓢𝓣𝓘𝓛𝓞</span> 
+              <span class="inline-block hover:-rotate-3 transition-transform duration-1000 hover:duration-300">𝓕�𝓛𝓘𝓧</span>
+              <span class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 w-0 group-hover:w-full transition-all duration-1000 ease-out"></span>
+            </h1>
+      
+            <!-- Desktop Nav with professional animations -->
+            <nav class="hidden md:flex items-center space-x-10">
+              <a href="#" class="group relative text-white font-medium overflow-hidden">
+                <span class="relative z-10 block py-2 transition-all duration-500 group-hover:text-pink-400">
+                  <span class="block transition-transform duration-500 group-hover:-translate-y-6">Home</span>
+                  <span class="absolute left-0 block transition-transform duration-500 translate-y-6 group-hover:-translate-y-1">Home</span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-pink-400 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] origin-left scale-x-0 group-hover:scale-x-100"></span>
+              </a>
+              
+              <div class="relative group">
+                <button class="flex items-center text-white font-medium overflow-hidden">
+                  <span class="relative z-10 block py-2 transition-all duration-500 group-hover:text-pink-400">
+                    <span class="block transition-transform duration-500 group-hover:-translate-y-6">Collections</span>
+                    <span class="absolute left-0 block transition-transform duration-500 translate-y-6 group-hover:-translate-y-1">Collections</span>
+                  </span>
+                  <i class="ri-arrow-down-s-line ml-1 transition-transform duration-500 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute left-1/2 -translate-x-1/2 mt-3 w-56 bg-white/95 shadow-2xl rounded-xl transform scale-90 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:scale-100 transition-all duration-500 origin-[50%_0%] backdrop-blur-lg border border-white/20 overflow-hidden">
+                  <div class="overflow-hidden">
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-800 hover:bg-pink-50 transition-all duration-500 hover:pl-8 group/item">
+                      <i class="ri-leaf-line mr-3 text-pink-500 transition-all duration-300 group-hover/item:rotate-12"></i>
+                      <span class="transition-all duration-500 group-hover/item:tracking-wider">Spring 2025</span>
+                      <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-500 group-hover/item:w-full"></span>
+                    </a>
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-800 hover:bg-yellow-50 transition-all duration-500 hover:pl-8 group/item">
+                      <i class="ri-sun-line mr-3 text-yellow-500 transition-all duration-300 group-hover/item:rotate-12"></i>
+                      <span class="transition-all duration-500 group-hover/item:tracking-wider">Summer Essentials</span>
+                      <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-500 group-hover/item:w-full"></span>
+                    </a>
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-800 hover:bg-blue-50 transition-all duration-500 hover:pl-8 group/item">
+                      <i class="ri-sparkling-line mr-3 text-blue-500 transition-all duration-300 group-hover/item:rotate-12"></i>
+                      <span class="transition-all duration-500 group-hover/item:tracking-wider">Special Occasions</span>
+                      <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-500 group-hover/item:w-full"></span>
+                    </a>
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-800 hover:bg-green-50 transition-all duration-500 hover:pl-8 group/item">
+                      <i class="ri-user-3-line mr-3 text-green-500 transition-all duration-300 group-hover/item:rotate-12"></i>
+                      <span class="transition-all duration-500 group-hover/item:tracking-wider">Everyday Wear</span>
+                      <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-500 group-hover/item:w-full"></span>
+                    </a>
+                  </div>
                 </div>
+              </div>
+              
+              <a href="#process" class="group relative text-white font-medium overflow-hidden">
+                <span class="relative z-10 block py-2 transition-all duration-500 group-hover:text-pink-400">
+                  <span class="block transition-transform duration-500 group-hover:-translate-y-6">Our Process</span>
+                  <span class="absolute left-0 block transition-transform duration-500 translate-y-6 group-hover:-translate-y-1">Our Process</span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-pink-400 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] origin-left scale-x-0 group-hover:scale-x-100"></span>
+              </a>
+              
+              <a href="#contact" class="group relative text-white font-medium overflow-hidden">
+                <span class="relative z-10 block py-2 transition-all duration-500 group-hover:text-pink-400">
+                  <span class="block transition-transform duration-500 group-hover:-translate-y-6">Contact</span>
+                  <span class="absolute left-0 block transition-transform duration-500 translate-y-6 group-hover:-translate-y-1">Contact</span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-pink-400 transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] origin-left scale-x-0 group-hover:scale-x-100"></span>
+              </a>
+            </nav>
+      
+            <!-- Mobile Menu Button with elegant animation -->
+            <button id="mobile-menu-button" class="md:hidden w-12 h-12 flex items-center justify-center text-white hover:text-pink-400 transition-all duration-500 ease-out">
+              <div class="relative w-6 h-6 transform transition-all duration-500">
+                <span class="absolute top-1 left-0 w-full h-0.5 bg-white rounded-full transform transition-all duration-500 origin-center" id="mobile-line-top"></span>
+                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full transform transition-all duration-500" id="mobile-line-middle"></span>
+                <span class="absolute bottom-1 left-0 w-full h-0.5 bg-white rounded-full transform transition-all duration-500 origin-center" id="mobile-line-bottom"></span>
+              </div>
+            </button>
+          </div>
+      
+          <!-- Mobile Navigation with professional animations -->
+          <div id="mobile-menu" class="hidden md:hidden bg-black/90 border border-white/10 mt-4 rounded-xl shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] transform origin-top scale-y-0 h-0 opacity-0 backdrop-blur-xl">
+            <div class="px-6 py-8 space-y-6 overflow-hidden">
+              <a href="#" class="block px-6 py-4 rounded-xl text-white hover:bg-white/10 font-medium transition-all duration-700 transform -translate-x-10 hover:translate-x-0 group">
+                <i class="ri-home-4-line mr-4 text-pink-400 transition-transform duration-500 group-hover:rotate-12"></i>
+                <span class="transition-all duration-500 group-hover:tracking-wider">Home</span>
+                <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-700 group-hover:w-full"></span>
+              </a>
+              
+              <div class="relative overflow-hidden rounded-xl">
+                <button id="mobile-collections-button" class="w-full flex items-center justify-between px-6 py-4 text-white hover:bg-white/10 font-medium transition-all duration-500">
+                  <span class="flex items-center">
+                    <i class="ri-stack-line mr-4 text-pink-400"></i>
+                    <span>Collections</span>
+                  </span>
+                  <i class="ri-arrow-down-s-line transition-transform duration-500"></i>
+                </button>
+                <div id="mobile-collections-dropdown" class="hidden ml-12 mt-2 space-y-3 transition-all duration-700 ease-out">
+                  <a href="#" class="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-500 transform hover:translate-x-2 group/item">
+                    <i class="ri-leaf-line mr-3 text-pink-400 transition-transform duration-300 group-hover/item:rotate-12"></i>
+                    Spring 2025
+                  </a>
+                  <a href="#" class="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-500 transform hover:translate-x-2 group/item">
+                    <i class="ri-sun-line mr-3 text-yellow-400 transition-transform duration-300 group-hover/item:rotate-12"></i>
+                    Summer Essentials
+                  </a>
+                  <a href="#" class="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-500 transform hover:translate-x-2 group/item">
+                    <i class="ri-sparkling-line mr-3 text-blue-400 transition-transform duration-300 group-hover/item:rotate-12"></i>
+                    Special Occasions
+                  </a>
+                  <a href="#" class="block px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-500 transform hover:translate-x-2 group/item">
+                    <i class="ri-user-3-line mr-3 text-green-400 transition-transform duration-300 group-hover/item:rotate-12"></i>
+                    Everyday Wear
+                  </a>
+                </div>
+              </div>
+              
+              <a href="#process" class="block px-6 py-4 rounded-xl text-white hover:bg-white/10 font-medium transition-all duration-700 transform -translate-x-10 hover:translate-x-0 group">
+                <i class="ri-flow-chart mr-4 text-pink-400 transition-transform duration-500 group-hover:rotate-12"></i>
+                <span class="transition-all duration-500 group-hover:tracking-wider">Our Process</span>
+                <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-700 group-hover:w-full"></span>
+              </a>
+              
+              <a href="#contact" class="block px-6 py-4 rounded-xl text-white hover:bg-white/10 font-medium transition-all duration-700 transform -translate-x-10 hover:translate-x-0 group">
+                <i class="ri-mail-line mr-4 text-pink-400 transition-transform duration-500 group-hover:rotate-12"></i>
+                <span class="transition-all duration-500 group-hover:tracking-wider">Contact</span>
+                <span class="block absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-700 group-hover:w-full"></span>
+              </a>
             </div>
-        </div>
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-2">
-                <div class="flex items-center mb-4 mt-2">
-                    <input type="text" placeholder="Search..."
-                        class="w-full border-none bg-gray-100 rounded-full py-2 pl-10 pr-4 text-sm">
-                    <div class="absolute left-4 w-10 h-full flex items-center justify-center text-gray-500">
-                        <i class="ri-search-line"></i>
-                    </div>
-                </div>
-                <a href="#" class="block py-2 text-gray-800 hover:text-primary font-medium">Home</a>
-                <div class="relative">
-                    <button id="mobile-collections-button"
-                        class="flex items-center justify-between w-full py-2 text-gray-800 hover:text-primary font-medium">
-                        Collections
-                        <div class="w-5 h-5 flex items-center justify-center">
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                    </button>
-                    <div id="mobile-collections-dropdown" class="hidden bg-gray-50 rounded-md mt-1 mb-2">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Spring 2025</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Summer
-                            Essentials</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Special
-                            Occasions</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Everyday Wear</a>
-                    </div>
-                </div>
-                <a href="#process" class="block py-2 text-gray-800 hover:text-primary font-medium">Our Process</a>
-                <a href="#custom" class="block py-2 text-gray-800 hover:text-primary font-medium">Custom Design</a>
-                <a href="#contact" class="block py-2 text-gray-800 hover:text-primary font-medium">Contact</a>
-            </div>
+          </div>
         </div>
     </header>
+      
+    <!-- Professional JavaScript Animation Controller -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const collectionsBtn = document.getElementById('mobile-collections-button');
+            const collectionsDropdown = document.getElementById('mobile-collections-dropdown');
+            const lineTop = document.getElementById('mobile-line-top');
+            const lineMiddle = document.getElementById('mobile-line-middle');
+            const lineBottom = document.getElementById('mobile-line-bottom');
+            
+            let menuOpen = false;
+            
+            // Animated hamburger menu toggle
+            menuBtn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                
+                if (menuOpen) {
+                    // Open animation
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('scale-y-100', 'h-auto', 'opacity-100');
+                    mobileMenu.style.pointerEvents = 'auto';
+                    
+                    // Hamburger to X animation
+                    lineTop.style.transform = 'translateY(7px) rotate(45deg)';
+                    lineMiddle.style.opacity = '0';
+                    lineBottom.style.transform = 'translateY(-7px) rotate(-45deg)';
+                } else {
+                    // Close animation
+                    mobileMenu.classList.remove('scale-y-100', 'h-auto', 'opacity-100');
+                    mobileMenu.classList.add('scale-y-0', 'h-0', 'opacity-0');
+                    mobileMenu.style.pointerEvents = 'none';
+                    
+                    // X to hamburger animation
+                    lineTop.style.transform = '';
+                    lineMiddle.style.opacity = '1';
+                    lineBottom.style.transform = '';
+                    
+                    // Also close collections dropdown if open
+                    collectionsDropdown.classList.add('hidden');
+                    collectionsBtn.querySelector('i').classList.remove('rotate-180');
+                }
+            });
+            
+            // Collections dropdown toggle with animation
+            collectionsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = collectionsDropdown.classList.contains('hidden');
+                const arrowIcon = collectionsBtn.querySelector('i');
+                
+                if (isHidden) {
+                    collectionsDropdown.classList.remove('hidden');
+                    arrowIcon.classList.add('rotate-180');
+                    setTimeout(() => {
+                        collectionsDropdown.style.maxHeight = '500px';
+                    }, 10);
+                } else {
+                    collectionsDropdown.style.maxHeight = '0';
+                    arrowIcon.classList.remove('rotate-180');
+                    setTimeout(() => {
+                        collectionsDropdown.classList.add('hidden');
+                    }, 500);
+                }
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            window.scrollTo({
+                                top: target.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (menuOpen) {
+                                menuBtn.click();
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // Add subtle pulse animation to logo on page load
+            setTimeout(() => {
+                document.querySelector('h1').classList.add('animate-pulse');
+                setTimeout(() => {
+                    document.querySelector('h1').classList.remove('animate-pulse');
+                }, 2000);
+            }, 500);
+        });
+    </script>
+  
+      
     <!-- Hero Section -->
 
     <section class="hero-bg w-full min-h-screen flex items-center pt-20">
@@ -336,10 +519,6 @@
                         <div class="w-5 h-5 ml-2 flex items-center justify-center">
                             <i class="ri-arrow-right-line"></i>
                         </div>
-                    </a>
-                    <a href="#custom"
-                        class="inline-flex items-center px-6 py-3 bg-white text-primary font-medium rounded-button border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg whitespace-nowrap">
-                        Custom Design
                     </a>
                 </div>
             </div>
@@ -367,16 +546,16 @@
                             Arrival</span>
                     </div>
                     <div class="relative h-80 overflow-hidden">
-                        <img src="./spring blossom.jpg"
-                            alt="Spring Collection"
+                        <img src="./spring blossom.jpg" alt="Spring Collection"
                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
                     </div>
 
                     <div class="p-4 bg-white">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                            Spring Blossoms                        </h3>
+                            Spring Blossoms </h3>
                         <p class="text-gray-600 mb-3">
-                            Delicate floral patterns and soft pastel colors are perfect for spring celebrations. They bring a fresh, elegant charm that reflects the season’s beauty and joy.
+                            Delicate floral patterns and soft pastel colors are perfect for spring celebrations. They
+                            bring a fresh, elegant charm that reflects the season’s beauty and joy.
                         </p>
                         <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
                             View Collection
@@ -401,9 +580,10 @@
                     </div>
                     <div class="p-4 bg-white">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                            Party Princess                        </h3>
+                            Party Princess </h3>
                         <p class="text-gray-600 mb-3">
-                            Elegant designs with sparkle and shine are perfect for special celebrations and events. They add a touch of glamour and sophistication, making every moment feel extraordinary.
+                            Elegant designs with sparkle and shine are perfect for special celebrations and events. They
+                            add a touch of glamour and sophistication, making every moment feel extraordinary.
 
                         </p>
                         <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
@@ -424,9 +604,10 @@
                     </div>
                     <div class="p-4 bg-white">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                            Summer Breeze                        </h3>
+                            Summer Breeze </h3>
                         <p class="text-gray-600 mb-3">
-                            Light, airy designs in breathable fabrics are ideal for warm summer days. They keep you cool and comfortable while maintaining effortless style and elegance.
+                            Light, airy designs in breathable fabrics are ideal for warm summer days. They keep you cool
+                            and comfortable while maintaining effortless style and elegance.
 
                         </p>
                         <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
@@ -455,7 +636,9 @@
                             Holiday Magic
                         </h3>
                         <p class="text-gray-600 mb-3">
-                            Festive designs in rich colors and luxurious fabrics are perfect for special holiday occasions. They create a warm, celebratory atmosphere and add a sense of elegance to every gathering.
+                            Festive designs in rich colors and luxurious fabrics are perfect for special holiday
+                            occasions. They create a warm, celebratory atmosphere and add a sense of elegance to every
+                            gathering.
 
                         </p>
                         <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
@@ -936,7 +1119,7 @@
                                         with you to bring your vision to life."
                                     </p>
                                     <p class="text-gray-800 font-medium text-sm mt-2">
-                                        - Emily Richardson, Lead Designer
+                                        - Ramshiya Elayi
                                     </p>
                                 </div>
                             </div>
@@ -949,7 +1132,7 @@
     <!-- Customer Reviews -->
     <section class="review-bg py-20 relative">
         <div class="absolute inset-0 bg-white bg-opacity-90" style="background-color: #f0e09acd;"></div>
-        <div class="container mx-auto px-4 relative z-10" >
+        <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                     What Parents Say
@@ -988,12 +1171,12 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20woman%20in%20her%2030s%20with%20blonde%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=21&amp;orientation=squarish"
-                                        alt="Customer" class="w-full h-full object-cover">
+                                    <img src="./Screenshot 2025-05-06 074352.png" alt="Customer"
+                                        class="w-full h-full object-cover">
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">Rebecca Thompson</h4>
-                                    <p class="text-gray-500 text-sm">Mother of Lily, 5</p>
+                                    <h4 class="text-gray-800 font-medium">Noushad</h4>
+                                    <p class="text-gray-500 text-sm">huss of Ramshiya,</p>
                                 </div>
                             </div>
                         </div>
@@ -1025,11 +1208,11 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20woman%20in%20her%2040s%20with%20dark%20brown%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=22&amp;orientation=squarish"
+                                    <img src="./Screenshot 2025-05-06 074352.png"
                                         alt="Customer" class="w-full h-full object-cover">
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">Jennifer Martinez</h4>
+                                    <h4 class="text-gray-800 font-medium">Ramshiya</h4>
                                     <p class="text-gray-500 text-sm">Mother of Sophia, 6</p>
                                 </div>
                             </div>
@@ -1062,11 +1245,48 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20smiling%20Asian%20woman%20in%20her%2030s%20with%20black%20hair%2C%20looking%20warm%20and%20approachable.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background.%20The%20lighting%20is%20soft%20and%20flattering%2C%20showing%20her%20as%20a%20friendly%20mother.&amp;width=100&amp;height=100&amp;seq=23&amp;orientation=squarish"
+                                    <img src="./Screenshot 2025-05-06 074352.png"
                                         alt="Customer" class="w-full h-full object-cover">
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">Michelle Kim</h4>
+                                    <h4 class="text-gray-800 font-medium">MRamshiya</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Emma, 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-slide w-full md:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <div class="flex text-primary mb-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-star-half-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                "The everyday dresses we purchased are not only beautiful but
+                                also incredibly durable. After countless washes, they still
+                                look brand new. My daughter loves how comfortable they are for
+                                school and play."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                    <img src="./Screenshot 2025-05-06 074352.png"
+                                        alt="Customer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-gray-800 font-medium">MRamshiya</h4>
                                     <p class="text-gray-500 text-sm">Mother of Emma, 4</p>
                                 </div>
                             </div>
@@ -1258,7 +1478,8 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <a href="#" class="font-['Pacifico'] text-3xl text-primary mb-6 inline-block">logo</a>
+                    <img src="./image.jpg" alt="" style="border-radius: 50%; height: 50px; width: 50px; margin-left: -15px; margin-top: -50px;">
+                    <a href="#" class="font-['Pacifico'] text-3xl text-primary mb-6 inline-block" style="margin-left: 50px; ">𝓔𝓢𝓣𝓘𝓛𝓞 𝓕𝓔𝓛𝓘𝓧</a>
                     <p class="text-gray-600 mb-6" style="color: aliceblue;">
                         Handcrafted children's dresses made with love, care, and the
                         finest fabrics for your little ones.
@@ -1296,29 +1517,24 @@
                     </h3>
                     <ul class="space-y-2">
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Home</a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Home</a>
                         </li>
                         <li>
                             <a href="#collections"
-                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Collections</a>
+                                class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Collections</a>
                         </li>
                         <li>
-                            <a href="#process"
-                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Our Process</a>
+                            <a href="#process" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Our Process</a>
                         </li>
+
                         <li>
-                            <a href="#custom"
-                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Custom
-                                Design</a>
+                            <a href="#contact" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Contact Us</a>
                         </li>
-                        <li>
-                            <a href="#contact"
-                                class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Size
-                                Guide</a>
-                        </li>
+
                     </ul>
                 </div>
                 <div>
@@ -1326,23 +1542,28 @@
                         Customer Service
                     </h3>
                     <ul class="space-y-2">
-                        <li  style="color: aliceblue;">
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300 style="color: aliceblue;"">Shipping
+                        <li style="color: aliceblue;">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300 style="
+                                color: aliceblue;"">Shipping
                                 &amp; Returns</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">FAQs</a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">FAQs</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Care
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Care
                                 Instructions</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Privacy
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Privacy
                                 Policy</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300" style="color: aliceblue;">Terms
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300"
+                                style="color: aliceblue;">Terms
                                 &amp; Conditions</a>
                         </li>
                     </ul>
@@ -1356,12 +1577,13 @@
                     <form class="flex mb-4">
                         <input type="email" placeholder="Your email address"
                             class="flex-grow px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        <button type="submit"
+                        
+                    </form>
+                    <button type="submit"
                             class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap !rounded-button">
                             Subscribe
                         </button>
-                    </form>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 pt-3">
                         <div class="w-8 h-5 flex items-center justify-center">
                             <i class="ri-visa-fill text-blue-800 text-lg"></i>
                         </div>
@@ -1443,19 +1665,123 @@
 
     <script>
 
+        // Reviews carousel
+const reviewsContainer = document.getElementById("reviews-container");
+const prevReviewBtn = document.getElementById("prev-review");
+const nextReviewBtn = document.getElementById("next-review");
+const reviewDots = document.querySelectorAll(".review-dot");
+let currentReviewIndex = 0;
+
+if (!reviewsContainer || !prevReviewBtn || !nextReviewBtn || !reviewDots.length) {
+  console.error("Reviews carousel elements not found!", {
+    reviewsContainer,
+    prevReviewBtn,
+    nextReviewBtn,
+    reviewDots,
+  });
+  return;
+}
+
+function showReview(index) {
+  const slides = document.querySelectorAll(".review-slide");
+  const maxIndex = slides.length - 1;
+  // Ensure index stays within bounds
+  currentReviewIndex = index < 0 ? maxIndex : index > maxIndex ? 0 : index;
+  
+  const slideWidth = slides[0]?.offsetWidth || 0;
+  if (!slideWidth) {
+    console.warn("Slide width is 0, carousel may not be visible.");
+    return;
+  }
+
+  reviewsContainer.style.transition = "transform 0.5s ease-in-out";
+  reviewsContainer.style.transform = `translateX(-${slideWidth * currentReviewIndex}px)`;
+
+  // Update dots
+  reviewDots.forEach((dot, i) => {
+    dot.classList.toggle("bg-primary", i === currentReviewIndex);
+    dot.classList.toggle("bg-gray-300", i !== currentReviewIndex);
+  });
+}
+
+// Handle window resize to recalculate slide width
+function handleResize() {
+  showReview(currentReviewIndex);
+}
+
+prevReviewBtn.addEventListener("click", function () {
+  showReview(currentReviewIndex - 1);
+});
+
+nextReviewBtn.addEventListener("click", function () {
+  showReview(currentReviewIndex + 1);
+});
+
+reviewDots.forEach((dot, index) => {
+  dot.addEventListener("click", function () {
+    showReview(index);
+  });
+});
+
+// Auto rotate reviews
+let reviewInterval = setInterval(() => {
+  showReview(currentReviewIndex + 1);
+}, 5000);
+
+reviewsContainer.addEventListener("mouseenter", () => {
+  clearInterval(reviewInterval);
+});
+
+reviewsContainer.addEventListener("mouseleave", () => {
+  reviewInterval = setInterval(() => {
+    showReview(currentReviewIndex + 1);
+  }, 5000);
+});
+
+// Recalculate slide width on resize
+window.addEventListener("resize", handleResize);
+
+// Initial render
+showReview(currentReviewIndex);
+
         document.addEventListener("DOMContentLoaded", function () {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenu = document.getElementById("mobile-menu");
-            mobileMenuButton.addEventListener("click", function () {
-                if (mobileMenu.classList.contains("hidden")) {
-                    mobileMenu.classList.remove("hidden");
-                    mobileMenuButton.innerHTML = '<i class="ri-close-line text-xl"></i>';
-                } else {
-                    mobileMenu.classList.add("hidden");
-                    mobileMenuButton.innerHTML = '<i class="ri-menu-line text-xl"></i>';
-                }
-            });
+            document.addEventListener("DOMContentLoaded", function () {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (!mobileMenuButton || !mobileMenu) {
+    console.error("Mobile menu elements not found!");
+    return;
+  }
+
+  mobileMenuButton.addEventListener("click", function () {
+    const isHidden = mobileMenu.classList.contains("hidden");
+    mobileMenu.classList.toggle("hidden", !isHidden);
+    mobileMenuButton.innerHTML = isHidden
+      ? '<i class="ri-close-line text-xl"></i>'
+      : '<i class="ri-menu-line text-xl"></i>';
+  });
+
+  // Mobile collections dropdown
+  const mobileCollectionsButton = document.getElementById("mobile-collections-button");
+  const mobileCollectionsDropdown = document.getElementById("mobile-collections-dropdown");
+
+  if (!mobileCollectionsButton || !mobileCollectionsDropdown) {
+    console.error("Mobile collections elements not found!");
+    return;
+  }
+
+  mobileCollectionsButton.addEventListener("click", function () {
+    const isHidden = mobileCollectionsDropdown.classList.contains("hidden");
+    mobileCollectionsDropdown.classList.toggle("hidden", !isHidden);
+    const icon = mobileCollectionsButton.querySelector("i");
+    icon.classList.toggle("ri-arrow-down-s-line", !isHidden);
+    icon.classList.toggle("ri-arrow-up-s-line", isHidden);
+  });
+
+  // ... (rest of the existing JavaScript code for header scroll, reviews carousel, etc.)
+});
             // Mobile collections dropdown
             const mobileCollectionsButton = document.getElementById(
                 "mobile-collections-button",
