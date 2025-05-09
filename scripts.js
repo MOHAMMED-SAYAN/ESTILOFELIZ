@@ -234,4 +234,30 @@ tailwind.config = {
     // ... (rest of the JavaScript code)
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const reviewsContainer = document.getElementById('reviews-container');
+    let slides = document.querySelectorAll('.review-slide');
+    let slideWidth = slides[0].offsetWidth;
+    let currentIndex = 0;
+
+    function moveSlides() {
+        // Move the first slide out of view
+        reviewsContainer.style.transition = 'transform 1s ease';
+        reviewsContainer.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+            setTimeout(() => {
+                reviewsContainer.style.transition = 'none';
+                reviewsContainer.style.transform = 'translateX(0)';
+            }, 1000); // Wait for the transition to complete before resetting
+        }
+    }
+
+    // Move the slides every 4 seconds
+    setInterval(moveSlides, 4000);
+});
+
+
   

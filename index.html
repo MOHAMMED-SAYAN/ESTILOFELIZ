@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Little Threads | Children's Dress-Making Company</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -208,139 +209,146 @@
         }
 
         #mobile-menu {
-  transition: all 0.3s ease-in-out;
-}
+            transition: all 0.3s ease-in-out;
+        }
 
-#mobile-menu:not(.hidden) {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
+        #mobile-menu:not(.hidden) {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-#mobile-menu.hidden {
-  display: none;
-  opacity: 0;
-  transform: translateY(-10px);
-}
+        #mobile-menu.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
 
-#mobile-collections-dropdown {
-  transition: all 0.3s ease-in-out;
-}
+        #mobile-collections-dropdown {
+            transition: all 0.3s ease-in-out;
+        }
 
-#mobile-collections-dropdown:not(.hidden) {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
+        #mobile-collections-dropdown:not(.hidden) {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-#mobile-collections-dropdown.hidden {
-  display: none;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-#mobile-menu {
-  z-index: 1000;
-}
-#reviews-container {
-  display: flex;
-  overflow-x: hidden;
-}
+        #mobile-collections-dropdown.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
 
-.review-slide {
-  flex-shrink: 0;
-  width: 100%;
-}
+        #mobile-menu {
+            z-index: 1000;
+        }
 
-@media (min-width: 768px) {
-  .review-slide {
-    width: 33.333333%; /* For 3 slides visible on desktop */
-  }
-}
-.review-slide {
-  box-sizing: border-box;
-  padding: 0 1rem;
-}
+        #reviews-container {
+            display: flex;
+            overflow-x: hidden;
+        }
 
-#reviews-container {
-  transition: transform 0.5s ease-in-out;
-}
+        .review-slide {
+            flex-shrink: 0;
+            width: 100%;
+        }
 
-.custom-navbar {
-  border: 2px solid rgba(255, 192, 203, 0.6);
-  border-radius: 15px;
-  margin: 6px 6px -15px -5px;
-  width: 99%;
-  margin-left: 6px;
-  background-color: #000000c4;
-  backdrop-filter: blur(12px);
-}
+        @media (min-width: 768px) {
+            .review-slide {
+                width: 33.333333%;
+                /* For 3 slides visible on desktop */
+            }
+        }
 
+        .review-slide {
+            box-sizing: border-box;
+            padding: 0 1rem;
+        }
+
+        #reviews-container {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .custom-navbar {
+            border: 2px solid rgba(255, 192, 203, 0.6);
+            border-radius: 15px;
+            margin: 6px 6px -15px -5px;
+            width: 99%;
+            margin-left: 6px;
+            background-color: #000000c4;
+            backdrop-filter: blur(12px);
+        }
     </style>
 </head>
 
 <body class="bg-white overflow-x-hidden" style="background-color: #e7e48ab1;">
-<!-- REMIX ICONS (include in <head>) -->
+    <!-- REMIX ICONS (include in <head>) -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
- <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md shadow-md border-b border-green-200 transition-all duration-500">
+    <!-- Header -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md shadow-md border-b border-green-200 transition-all duration-500">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      
-          <!-- Logo -->
-          <h1 class="text-2xl font-semibold text-green-800 tracking-wide hover:text-green-600 transition duration-300 select-none cursor-pointer">
-            𝓔𝓢𝓣𝓘𝓛𝓞 <span class="font-light">𝓕𝓔𝓛𝓘𝓧</span>
-          </h1>
-      
-          <!-- Desktop Nav -->
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="#" class="nav-link">Home</a>
-            <div class="relative group">
-              <button class="nav-link flex items-center gap-1">
-                Collections
-                <i class="ri-arrow-down-s-line transition-transform duration-300 group-hover:rotate-180"></i>
-              </button>
-              <div class="absolute left-0 mt-2 w-48 bg-white border border-green-100 rounded-md shadow-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transform transition-all duration-300 origin-top z-50">
-                <a href="#" class="dropdown-link">Spring</a>
-                <a href="#" class="dropdown-link">Summer</a>
-                <a href="#" class="dropdown-link">Occasions</a>
-              </div>
-            </div>
-            <a href="#process" class="nav-link">Our Process</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </nav>
-      
-          <!-- Mobile Menu Button -->
-          <button id="menu-toggle" class="md:hidden text-green-800 focus:outline-none z-50 relative">
-            <i id="menu-icon" class="ri-menu-line text-3xl"></i>
-          </button>
+
+            <!-- Logo -->
+            <h1
+                class="text-2xl font-semibold text-green-800 tracking-wide hover:text-green-600 transition duration-300 select-none cursor-pointer">
+                𝓔𝓢𝓣𝓘𝓛𝓞 <span class="font-light">𝓕𝓔𝓛𝓘𝓧</span>
+            </h1>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1">
+                        Collections
+                        <i class="ri-arrow-down-s-line transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-2 w-48 bg-white border border-green-100 rounded-md shadow-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transform transition-all duration-300 origin-top z-50">
+                        <a href="#" class="dropdown-link">Spring</a>
+                        <a href="#" class="dropdown-link">Summer</a>
+                        <a href="#" class="dropdown-link">Occasions</a>
+                    </div>
+                </div>
+                <a href="#process" class="nav-link">Our Process</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-green-800 focus:outline-none z-50 relative">
+                <i id="menu-icon" class="ri-menu-line text-3xl"></i>
+            </button>
         </div>
-      
+
         <!-- Slide-in Sidebar -->
-        <div id="sidebar" class="fixed top-0 left-0 h-full w-64  shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
-          <div class="p-6 flex flex-col space-y-4" style="background-color: #989898c3;">
-            <a href="#" class="mobile-link">Home</a>
-            <div>
-              <button class="mobile-link flex items-center justify-between w-full" id="dropdown-toggle">
-                Collections
-                <i class="ri-arrow-down-s-line" id="dropdown-icon"></i>
-              </button>
-              <div id="dropdown-menu" class="pl-4 mt-2 space-y-2 hidden">
-                <a href="#" class="mobile-link">Spring</a>
-                <a href="#" class="mobile-link">Summer</a>
-                <a href="#" class="mobile-link">Occasions</a>
-              </div>
+        <div id="sidebar"
+            class="fixed top-0 left-0 h-full w-64  shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+            <div class="p-6 flex flex-col space-y-4" style="background-color: #989898c3;">
+                <a href="#" class="mobile-link">Home</a>
+                <div>
+                    <button class="mobile-link flex items-center justify-between w-full" id="dropdown-toggle">
+                        Collections
+                        <i class="ri-arrow-down-s-line" id="dropdown-icon"></i>
+                    </button>
+                    <div id="dropdown-menu" class="pl-4 mt-2 space-y-2 hidden">
+                        <a href="#" class="mobile-link">Spring</a>
+                        <a href="#" class="mobile-link">Summer</a>
+                        <a href="#" class="mobile-link">Occasions</a>
+                    </div>
+                </div>
+                <a href="#process" class="mobile-link">Our Process</a>
+                <a href="#contact" class="mobile-link">Contact</a>
             </div>
-            <a href="#process" class="mobile-link">Our Process</a>
-            <a href="#contact" class="mobile-link">Contact</a>
-          </div>
         </div>
-      
+
         <!-- Overlay -->
         <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
-      </header>
-      
-      <!-- Script -->
-      <script>
+    </header>
+
+    <!-- Script -->
+    <script>
         const menuToggle = document.getElementById('menu-toggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
@@ -348,74 +356,74 @@
         const dropdownToggle = document.getElementById('dropdown-toggle');
         const dropdownMenu = document.getElementById('dropdown-menu');
         const dropdownIcon = document.getElementById('dropdown-icon');
-      
+
         // Toggle sidebar
         menuToggle.addEventListener('click', () => {
-          sidebar.classList.toggle('-translate-x-full');
-          overlay.classList.toggle('hidden');
-          icon.classList.toggle('ri-menu-line');
-          icon.classList.toggle('ri-close-line');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+            icon.classList.toggle('ri-menu-line');
+            icon.classList.toggle('ri-close-line');
         });
-      
+
         // Close sidebar when clicking outside
         overlay.addEventListener('click', () => {
-          sidebar.classList.add('-translate-x-full');
-          overlay.classList.add('hidden');
-          icon.classList.replace('ri-close-line', 'ri-menu-line');
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+            icon.classList.replace('ri-close-line', 'ri-menu-line');
         });
-      
+
         // Toggle dropdown in mobile
         dropdownToggle.addEventListener('click', () => {
-          dropdownMenu.classList.toggle('hidden');
-          dropdownIcon.classList.toggle('rotate-180');
+            dropdownMenu.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
         });
-      
+
         // Smooth scroll and close sidebar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              e.preventDefault();
-              window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-              sidebar.classList.add('-translate-x-full');
-              overlay.classList.add('hidden');
-              icon.classList.replace('ri-close-line', 'ri-menu-line');
-            }
-          });
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                    icon.classList.replace('ri-close-line', 'ri-menu-line');
+                }
+            });
         });
-      </script>
-      
-      <!-- Styles -->
-      <style>
+    </script>
+
+    <!-- Styles -->
+    <style>
         .nav-link {
-          @apply relative text-green-800 hover:text-green-600 font-medium transition-colors duration-300 group;
+            @apply relative text-green-800 hover:text-green-600 font-medium transition-colors duration-300 group;
         }
-      
+
         .nav-link::after {
-          content: "";
-          @apply absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-500;
+            content: "";
+            @apply absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-500;
         }
-      
+
         .nav-link:hover::after {
-          width: 100%;
+            width: 100%;
         }
-      
+
         .dropdown-link {
-          @apply block px-4 py-2 text-green-700 hover:bg-green-50 transition;
+            @apply block px-4 py-2 text-green-700 hover:bg-green-50 transition;
         }
-      
+
         .mobile-link {
-          @apply block py-2 text-green-800 hover:text-green-600 transition font-medium;
+            @apply block py-2 text-green-800 hover:text-green-600 transition font-medium;
         }
-      
+
         #dropdown-icon {
-          @apply transition-transform duration-300;
+            @apply transition-transform duration-300;
         }
-      </style>
-      
-    
-  
-      
+    </style>
+
+
+
+
     <!-- Hero Section -->
 
     <section class="hero-bg w-full min-h-screen flex items-center pt-20">
@@ -1024,9 +1032,9 @@
                         </div>
                         <div class="mt-8 p-4 bg-gray-50 rounded-lg">
                             <div class="flex items-start">
-                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 mr-3">
-                                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20of%20a%20female%20fashion%20designer%20with%20a%20warm%20smile%2C%20in%20her%20mid-30s.%20She%20has%20shoulder-length%20brown%20hair%20and%20is%20wearing%20stylish%20glasses.%20The%20image%20is%20a%20headshot%20with%20a%20simple%2C%20neutral%20background%2C%20showing%20her%20as%20approachable%20and%20creative.%20The%20lighting%20is%20soft%20and%20flattering.&amp;width=100&amp;height=100&amp;seq=20&amp;orientation=squarish"
-                                        alt="Designer" class="w-full h-full object-cover">
+                                <div class="w-10 h-20 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 mr-3">
+                                    <img src="./Screenshot 2025-05-06 074352.png" alt="Designer"
+                                        class="w-full h-full object-cover">
                                 </div>
                                 <div>
                                     <p class="text-gray-600 italic text-sm">
@@ -1087,12 +1095,11 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="./Screenshot 2025-05-06 074352.png" alt="Customer"
-                                        class="w-full h-full object-cover">
+                                    
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">Noushad</h4>
-                                    <p class="text-gray-500 text-sm">huss of Ramshiya,</p>
+                                    <h4 class="text-gray-800 font-medium">haseenabanu</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Renha</p>
                                 </div>
                             </div>
                         </div>
@@ -1124,12 +1131,11 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="./Screenshot 2025-05-06 074352.png"
-                                        alt="Customer" class="w-full h-full object-cover">
+                                   
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">Ramshiya</h4>
-                                    <p class="text-gray-500 text-sm">Mother of Sophia, 6</p>
+                                    <h4 class="text-gray-800 font-medium">Kadeeja</h4>
+                                    <p class="text-gray-500 text-sm">Mother of fathima </p>
                                 </div>
                             </div>
                         </div>
@@ -1161,55 +1167,18 @@
                             </p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="./Screenshot 2025-05-06 074352.png"
-                                        alt="Customer" class="w-full h-full object-cover">
+                                    
                                 </div>
                                 <div>
-                                    <h4 class="text-gray-800 font-medium">MRamshiya</h4>
-                                    <p class="text-gray-500 text-sm">Mother of Emma, 4</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-slide w-full md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
-                            <div class="flex text-primary mb-3">
-                                <div class="w-5 h-5 flex items-center justify-center">
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                                <div class="w-5 h-5 flex items-center justify-center">
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                                <div class="w-5 h-5 flex items-center justify-center">
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                                <div class="w-5 h-5 flex items-center justify-center">
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                                <div class="w-5 h-5 flex items-center justify-center">
-                                    <i class="ri-star-half-fill"></i>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6">
-                                "The everyday dresses we purchased are not only beautiful but
-                                also incredibly durable. After countless washes, they still
-                                look brand new. My daughter loves how comfortable they are for
-                                school and play."
-                            </p>
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="./Screenshot 2025-05-06 074352.png"
-                                        alt="Customer" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h4 class="text-gray-800 font-medium">MRamshiya</h4>
-                                    <p class="text-gray-500 text-sm">Mother of Emma, 4</p>
+                                    <h4 class="text-gray-800 font-medium">Naseeba</h4>
+                                    <p class="text-gray-500 text-sm">Mother of Sherin</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                
                 <!-- Navigation Buttons -->
                 <button id="prev-review"
                     class="absolute top-1/2 left-0 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 focus:outline-none z-10 !rounded-button">
@@ -1353,36 +1322,39 @@
                             <h4 class="text-gray-800 font-medium mb-3">Follow Us</h4>
                             <div class="flex space-x-3">
                                 <a href="#"
-                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                                    class=" instabgc w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-white transition-colors duration-300">
                                     <div class="w-5 h-5 flex items-center justify-center">
                                         <i class="ri-instagram-line"></i>
                                     </div>
                                 </a>
                                 <a href="#"
-                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
-                                    <div class="w-5 h-5 flex items-center justify-center">
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1877F2] hover:text-white transition-colors duration-300">
+                                    <div class="w-4 h-4 flex items-center justify-center">
                                         <i class="ri-facebook-fill"></i>
                                     </div>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
-                                    <div class="w-5 h-5 flex items-center justify-center">
-                                        <i class="ri-pinterest-line"></i>
+
+                                <a href="tel:9605696566"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors duration-300">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="bi bi-telephone"></i>
                                     </div>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
-                                    <div class="w-5 h-5 flex items-center justify-center">
-                                        <i class="ri-twitter-x-line"></i>
-                                    </div>
-                                </a>
+
+
+                                <a href="https://wa.me/9605696566" target="_blank"
+                                class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors duration-300">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-whatsapp-line"></i>
+                                </div>
+                            </a>
+                            
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden h-64 fade-in-up"
-                        style="animation-delay: 0.6s;">
-                        <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map"
-                            class="w-full h-full object-cover">
+                    <div>
+                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.9161000199665!2d75.9817513!3d11.0449171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c9a9a39a595%3A0x51c2db698e258b23!2sAreekulam%20Juma%20Masjid!5e0!3m2!1sen!2sin!4v1746806588879!5m2!1sen!2sin" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -1394,36 +1366,42 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <img src="./image.jpg" alt="" style="border-radius: 50%; height: 50px; width: 50px; margin-left: -15px; margin-top: -40px;">
-                    <a href="#" class="font-['Pacifico'] text-3xl text-primary mb-6 inline-block" style="margin-left: 50px; margin-top: -10px;">𝓔𝓢𝓣𝓘𝓛𝓞 𝓕𝓔𝓛𝓘𝓧</a>
+                    <img src="./image.jpg" alt=""
+                        style="border-radius: 50%; height: 50px; width: 50px; margin-left: -15px; margin-top: -40px;">
+                    <a href="#" class="font-['Pacifico'] text-3xl text-primary mb-6 inline-block"
+                        style="margin-left: 50px; margin-top: -10px;">𝓔𝓢𝓣𝓘𝓛𝓞 𝓕𝓔𝓛𝓘𝓧</a>
                     <p class="text-gray-600 mb-6" style="color: aliceblue;">
                         Handcrafted children's dresses made with love, care, and the
                         finest fabrics for your little ones.
                     </p>
                     <div class="flex space-x-3">
                         <a href="#"
-                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            class="instabgc w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
                             <div class="w-4 h-4 flex items-center justify-center">
                                 <i class="ri-instagram-line"></i>
                             </div>
                         </a>
                         <a href="#"
-                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1877F2] hover:text-white transition-colors duration-300">
                             <div class="w-4 h-4 flex items-center justify-center">
                                 <i class="ri-facebook-fill"></i>
                             </div>
                         </a>
-                        <a href="#"
-                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+
+                        <a href="tel:9605696566"
+                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors duration-300">
                             <div class="w-4 h-4 flex items-center justify-center">
-                                <i class="ri-pinterest-line"></i>
+                                <i class="bi bi-telephone"></i>
                             </div>
                         </a>
-                        <a href="#"
-                            class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
-                            <div class="w-4 h-4 flex items-center justify-center">
-                                <i class="ri-twitter-x-line"></i>
-                            </div>
+
+
+                        <a href="https://wa.me/9605696566" target="_blank"
+                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors duration-300">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-whatsapp-line"></i>
+                        </div>
+                    </a>
                         </a>
                     </div>
                 </div>
@@ -1493,12 +1471,12 @@
                     <form class="flex mb-4">
                         <input type="email" placeholder="Your email address"
                             class="flex-grow px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                        
+
                     </form>
                     <button type="submit"
-                            class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap !rounded-button">
-                            Subscribe
-                        </button>
+                        class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap !rounded-button">
+                        Subscribe
+                    </button>
                     <div class="flex flex-wrap gap-2 pt-3">
                         <div class="w-8 h-5 flex items-center justify-center">
                             <i class="ri-visa-fill text-blue-800 text-lg"></i>
@@ -1577,127 +1555,126 @@
         </button>
     </div>
 
-    <script src="scripts.js"></script>
 
     <script>
 
         // Reviews carousel
-const reviewsContainer = document.getElementById("reviews-container");
-const prevReviewBtn = document.getElementById("prev-review");
-const nextReviewBtn = document.getElementById("next-review");
-const reviewDots = document.querySelectorAll(".review-dot");
-let currentReviewIndex = 0;
+        const reviewsContainer = document.getElementById("reviews-container");
+        const prevReviewBtn = document.getElementById("prev-review");
+        const nextReviewBtn = document.getElementById("next-review");
+        const reviewDots = document.querySelectorAll(".review-dot");
+        let currentReviewIndex = 0;
 
-if (!reviewsContainer || !prevReviewBtn || !nextReviewBtn || !reviewDots.length) {
-  console.error("Reviews carousel elements not found!", {
-    reviewsContainer,
-    prevReviewBtn,
-    nextReviewBtn,
-    reviewDots,
-  });
-  return;
-}
+        if (!reviewsContainer || !prevReviewBtn || !nextReviewBtn || !reviewDots.length) {
+            console.error("Reviews carousel elements not found!", {
+                reviewsContainer,
+                prevReviewBtn,
+                nextReviewBtn,
+                reviewDots,
+            });
+            return;
+        }
 
-function showReview(index) {
-  const slides = document.querySelectorAll(".review-slide");
-  const maxIndex = slides.length - 1;
-  // Ensure index stays within bounds
-  currentReviewIndex = index < 0 ? maxIndex : index > maxIndex ? 0 : index;
-  
-  const slideWidth = slides[0]?.offsetWidth || 0;
-  if (!slideWidth) {
-    console.warn("Slide width is 0, carousel may not be visible.");
-    return;
-  }
+        function showReview(index) {
+            const slides = document.querySelectorAll(".review-slide");
+            const maxIndex = slides.length - 1;
+            // Ensure index stays within bounds
+            currentReviewIndex = index < 0 ? maxIndex : index > maxIndex ? 0 : index;
 
-  reviewsContainer.style.transition = "transform 0.5s ease-in-out";
-  reviewsContainer.style.transform = `translateX(-${slideWidth * currentReviewIndex}px)`;
+            const slideWidth = slides[0]?.offsetWidth || 0;
+            if (!slideWidth) {
+                console.warn("Slide width is 0, carousel may not be visible.");
+                return;
+            }
 
-  // Update dots
-  reviewDots.forEach((dot, i) => {
-    dot.classList.toggle("bg-primary", i === currentReviewIndex);
-    dot.classList.toggle("bg-gray-300", i !== currentReviewIndex);
-  });
-}
+            reviewsContainer.style.transition = "transform 0.5s ease-in-out";
+            reviewsContainer.style.transform = `translateX(-${slideWidth * currentReviewIndex}px)`;
 
-// Handle window resize to recalculate slide width
-function handleResize() {
-  showReview(currentReviewIndex);
-}
+            // Update dots
+            reviewDots.forEach((dot, i) => {
+                dot.classList.toggle("bg-primary", i === currentReviewIndex);
+                dot.classList.toggle("bg-gray-300", i !== currentReviewIndex);
+            });
+        }
 
-prevReviewBtn.addEventListener("click", function () {
-  showReview(currentReviewIndex - 1);
-});
+        // Handle window resize to recalculate slide width
+        function handleResize() {
+            showReview(currentReviewIndex);
+        }
 
-nextReviewBtn.addEventListener("click", function () {
-  showReview(currentReviewIndex + 1);
-});
+        prevReviewBtn.addEventListener("click", function () {
+            showReview(currentReviewIndex - 1);
+        });
 
-reviewDots.forEach((dot, index) => {
-  dot.addEventListener("click", function () {
-    showReview(index);
-  });
-});
+        nextReviewBtn.addEventListener("click", function () {
+            showReview(currentReviewIndex + 1);
+        });
 
-// Auto rotate reviews
-let reviewInterval = setInterval(() => {
-  showReview(currentReviewIndex + 1);
-}, 5000);
+        reviewDots.forEach((dot, index) => {
+            dot.addEventListener("click", function () {
+                showReview(index);
+            });
+        });
 
-reviewsContainer.addEventListener("mouseenter", () => {
-  clearInterval(reviewInterval);
-});
+        // Auto rotate reviews
+        let reviewInterval = setInterval(() => {
+            showReview(currentReviewIndex + 1);
+        }, 5000);
 
-reviewsContainer.addEventListener("mouseleave", () => {
-  reviewInterval = setInterval(() => {
-    showReview(currentReviewIndex + 1);
-  }, 5000);
-});
+        reviewsContainer.addEventListener("mouseenter", () => {
+            clearInterval(reviewInterval);
+        });
 
-// Recalculate slide width on resize
-window.addEventListener("resize", handleResize);
+        reviewsContainer.addEventListener("mouseleave", () => {
+            reviewInterval = setInterval(() => {
+                showReview(currentReviewIndex + 1);
+            }, 5000);
+        });
 
-// Initial render
-showReview(currentReviewIndex);
+        // Recalculate slide width on resize
+        window.addEventListener("resize", handleResize);
+
+        // Initial render
+        showReview(currentReviewIndex);
 
         document.addEventListener("DOMContentLoaded", function () {
             document.addEventListener("DOMContentLoaded", function () {
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
+                // Mobile menu toggle
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenu = document.getElementById("mobile-menu");
 
-  if (!mobileMenuButton || !mobileMenu) {
-    console.error("Mobile menu elements not found!");
-    return;
-  }
+                if (!mobileMenuButton || !mobileMenu) {
+                    console.error("Mobile menu elements not found!");
+                    return;
+                }
 
-  mobileMenuButton.addEventListener("click", function () {
-    const isHidden = mobileMenu.classList.contains("hidden");
-    mobileMenu.classList.toggle("hidden", !isHidden);
-    mobileMenuButton.innerHTML = isHidden
-      ? '<i class="ri-close-line text-xl"></i>'
-      : '<i class="ri-menu-line text-xl"></i>';
-  });
+                mobileMenuButton.addEventListener("click", function () {
+                    const isHidden = mobileMenu.classList.contains("hidden");
+                    mobileMenu.classList.toggle("hidden", !isHidden);
+                    mobileMenuButton.innerHTML = isHidden
+                        ? '<i class="ri-close-line text-xl"></i>'
+                        : '<i class="ri-menu-line text-xl"></i>';
+                });
 
-  // Mobile collections dropdown
-  const mobileCollectionsButton = document.getElementById("mobile-collections-button");
-  const mobileCollectionsDropdown = document.getElementById("mobile-collections-dropdown");
+                // Mobile collections dropdown
+                const mobileCollectionsButton = document.getElementById("mobile-collections-button");
+                const mobileCollectionsDropdown = document.getElementById("mobile-collections-dropdown");
 
-  if (!mobileCollectionsButton || !mobileCollectionsDropdown) {
-    console.error("Mobile collections elements not found!");
-    return;
-  }
+                if (!mobileCollectionsButton || !mobileCollectionsDropdown) {
+                    console.error("Mobile collections elements not found!");
+                    return;
+                }
 
-  mobileCollectionsButton.addEventListener("click", function () {
-    const isHidden = mobileCollectionsDropdown.classList.contains("hidden");
-    mobileCollectionsDropdown.classList.toggle("hidden", !isHidden);
-    const icon = mobileCollectionsButton.querySelector("i");
-    icon.classList.toggle("ri-arrow-down-s-line", !isHidden);
-    icon.classList.toggle("ri-arrow-up-s-line", isHidden);
-  });
+                mobileCollectionsButton.addEventListener("click", function () {
+                    const isHidden = mobileCollectionsDropdown.classList.contains("hidden");
+                    mobileCollectionsDropdown.classList.toggle("hidden", !isHidden);
+                    const icon = mobileCollectionsButton.querySelector("i");
+                    icon.classList.toggle("ri-arrow-down-s-line", !isHidden);
+                    icon.classList.toggle("ri-arrow-up-s-line", isHidden);
+                });
 
-  // ... (rest of the existing JavaScript code for header scroll, reviews carousel, etc.)
-});
+                // ... (rest of the existing JavaScript code for header scroll, reviews carousel, etc.)
+            });
             // Mobile collections dropdown
             const mobileCollectionsButton = document.getElementById(
                 "mobile-collections-button",
@@ -1854,6 +1831,8 @@ showReview(currentReviewIndex);
             window.addEventListener("scroll", checkFade);
         });
     </script>
+
+<script src="scripts.js"></script>
 
 
 </body>
